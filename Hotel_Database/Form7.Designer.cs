@@ -33,6 +33,9 @@ namespace Hotel_Database
             this.delete = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_children = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_children = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -45,9 +48,6 @@ namespace Hotel_Database
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.id_children = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_children = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,11 +91,30 @@ namespace Hotel_Database
             this.date});
             this.dataGridView1.Location = new System.Drawing.Point(-2, 118);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(547, 143);
+            this.dataGridView1.Size = new System.Drawing.Size(547, 145);
             this.dataGridView1.TabIndex = 56;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // id_children
+            // 
+            this.id_children.DataPropertyName = "id_Ребенок_клиента";
+            this.id_children.HeaderText = "Номер ребенка";
+            this.id_children.Name = "id_children";
+            // 
+            // name_children
+            // 
+            this.name_children.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name_children.DataPropertyName = "ФИО_ребенка";
+            this.name_children.HeaderText = "Ребенок";
+            this.name_children.Name = "name_children";
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "Дата_рождения";
+            this.date.HeaderText = "Дата рождения";
+            this.date.Name = "date";
             // 
             // textBox5
             // 
@@ -211,25 +230,6 @@ namespace Hotel_Database
             this.label1.TabIndex = 44;
             this.label1.Text = "Номер клиента";
             // 
-            // id_children
-            // 
-            this.id_children.DataPropertyName = "id_Ребенок_клиента";
-            this.id_children.HeaderText = "Номер ребенка";
-            this.id_children.Name = "id_children";
-            // 
-            // name_children
-            // 
-            this.name_children.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name_children.DataPropertyName = "ФИО_ребенка";
-            this.name_children.HeaderText = "Ребенок";
-            this.name_children.Name = "name_children";
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "Дата_рождения";
-            this.date.HeaderText = "Дата рождения";
-            this.date.Name = "date";
-            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -252,7 +252,7 @@ namespace Hotel_Database
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form7";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Просмотр информации о клиенте";

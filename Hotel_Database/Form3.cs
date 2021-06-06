@@ -11,8 +11,11 @@ namespace Hotel_Database
 
         SqlCommand myCommPlacement = new SqlCommand("select*from dbo.Размещение");
         SqlCommand myCommComfort = new SqlCommand("select*from dbo.Комфортность");
-        SqlCommand myCommService = new SqlCommand("select*from dbo.Дополнительные_услуги");
         SqlCommand myCommStaff = new SqlCommand("select*from dbo.Сотрудники");
+
+        SqlCommand myCommService = new SqlCommand("select*from dbo.Дополнительные_услуги");
+        string idService, nameService, costService;
+        int indexSelectRow;
 
         SqlDataAdapter sda = new SqlDataAdapter(); DataSet ds = new DataSet();
         int idNumberTable;
@@ -126,6 +129,11 @@ namespace Hotel_Database
 
                         sda.Fill(ds, "Услуга");
                         dataGridView1.DataSource = ds.Tables["Услуга"];
+
+                        // Если пользователь нажмет просмотр информации без выбора записи
+                        idService = dataGridView1[0, indexSelectRow].Value.ToString();
+                        nameService = dataGridView1[1, indexSelectRow].Value.ToString();
+                        costService = dataGridView1[2, indexSelectRow].Value.ToString();
                     }
                     break;
                 case 4:
@@ -184,6 +192,21 @@ namespace Hotel_Database
             }
 
             dataGridView1.Refresh();
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (idNumberTable == 3)
+            {
+                // Для того, чтобы не обновлялись значения, если нажатия происходит в одной строке
+                if (e.RowIndex != indexSelectRow)
+                {
+                    indexSelectRow = e.RowIndex;
+
+                    idService = dataGridView1[0, indexSelectRow].Value.ToString();
+                    nameService = dataGridView1[1, indexSelectRow].Value.ToString();
+                    costService = dataGridView1[2, indexSelectRow].Value.ToString();
+                }
+            }
         }
 
         private void add_ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -250,8 +273,18 @@ namespace Hotel_Database
         }
         private void info_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form8 form8 = new Form8();
-            form8.ShowDialog();
+            try
+            {
+                if (idService.Trim() == "") throw new Exception();
+
+                Form8 form8 = new Form8(idService, nameService, costService);
+                form8.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                                "1. Возможно вы пытаетесь посмотреть информацию о несуществующих данных.", "Внимание!");
+            }
         }
 
         private void back_ToolStripMenuItem_Click(object sender, EventArgs e)

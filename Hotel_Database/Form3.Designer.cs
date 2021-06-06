@@ -33,6 +33,7 @@ namespace Hotel_Database
             this.add_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delete_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.save_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.info_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.back_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +44,6 @@ namespace Hotel_Database
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.post = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.info_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,13 @@ namespace Hotel_Database
             this.save_ToolStripMenuItem.Text = "Сохранение";
             this.save_ToolStripMenuItem.Click += new System.EventHandler(this.save_ToolStripMenuItem_Click);
             // 
+            // info_ToolStripMenuItem
+            // 
+            this.info_ToolStripMenuItem.Name = "info_ToolStripMenuItem";
+            this.info_ToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.info_ToolStripMenuItem.Text = "Информация";
+            this.info_ToolStripMenuItem.Click += new System.EventHandler(this.info_ToolStripMenuItem_Click);
+            // 
             // back_ToolStripMenuItem
             // 
             this.back_ToolStripMenuItem.Name = "back_ToolStripMenuItem";
@@ -110,6 +117,8 @@ namespace Hotel_Database
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(484, 437);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // id
             // 
@@ -158,13 +167,6 @@ namespace Hotel_Database
             // 
             this.cost.HeaderText = "Column8";
             this.cost.Name = "cost";
-            // 
-            // info_ToolStripMenuItem
-            // 
-            this.info_ToolStripMenuItem.Name = "info_ToolStripMenuItem";
-            this.info_ToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
-            this.info_ToolStripMenuItem.Text = "Информация";
-            this.info_ToolStripMenuItem.Click += new System.EventHandler(this.info_ToolStripMenuItem_Click);
             // 
             // Form3
             // 

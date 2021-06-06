@@ -36,9 +36,9 @@ namespace Hotel_Database
             this.info_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.back_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id_service = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.name_service = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.date_use = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_check = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.id_arrival = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.count_use = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -99,9 +99,9 @@ namespace Hotel_Database
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_service,
+            this.name_service,
             this.date_use,
-            this.id_check,
+            this.id_arrival,
             this.count_use});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
@@ -111,39 +111,42 @@ namespace Hotel_Database
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // id_service
+            // name_service
             // 
-            this.id_service.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id_service.DataPropertyName = "Дополнительные_услуги_id_Дополнительные_услуги";
-            this.id_service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.id_service.HeaderText = "Номер услуги";
-            this.id_service.Name = "id_service";
-            this.id_service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id_service.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.name_service.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name_service.DataPropertyName = "Название";
+            this.name_service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.name_service.HeaderText = "Услуга";
+            this.name_service.Name = "name_service";
+            this.name_service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.name_service.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // date_use
             // 
-            this.date_use.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.date_use.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.date_use.DataPropertyName = "Дата_пользования";
             this.date_use.HeaderText = "Дата";
             this.date_use.Name = "date_use";
+            this.date_use.Width = 67;
             // 
-            // id_check
+            // id_arrival
             // 
-            this.id_check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id_check.DataPropertyName = "Заезд_id_Заезд";
-            this.id_check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.id_check.HeaderText = "Номер заезда";
-            this.id_check.Name = "id_check";
-            this.id_check.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id_check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id_arrival.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id_arrival.DataPropertyName = "Заезд_id_Заезд";
+            this.id_arrival.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.id_arrival.HeaderText = "Номер заезда";
+            this.id_arrival.Name = "id_arrival";
+            this.id_arrival.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id_arrival.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id_arrival.Width = 126;
             // 
             // count_use
             // 
-            this.count_use.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.count_use.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.count_use.DataPropertyName = "Количество_пользований";
             this.count_use.HeaderText = "Кол-во пользований";
             this.count_use.Name = "count_use";
+            this.count_use.Width = 167;
             // 
             // Form9
             // 
@@ -153,8 +156,9 @@ namespace Hotel_Database
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form9";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список использования услуг";
             this.Load += new System.EventHandler(this.Form9_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -174,9 +178,9 @@ namespace Hotel_Database
         private System.Windows.Forms.ToolStripMenuItem info_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem back_ToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn id_service;
+        private System.Windows.Forms.DataGridViewComboBoxColumn name_service;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_use;
-        private System.Windows.Forms.DataGridViewComboBoxColumn id_check;
+        private System.Windows.Forms.DataGridViewComboBoxColumn id_arrival;
         private System.Windows.Forms.DataGridViewTextBoxColumn count_use;
     }
 }

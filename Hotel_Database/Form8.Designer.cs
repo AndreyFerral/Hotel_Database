@@ -32,64 +32,52 @@ namespace Hotel_Database
             this.update = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.id_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.date_use = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number_check = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_arrival = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.count_use = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(575, 186);
+            this.update.Location = new System.Drawing.Point(322, 175);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(108, 30);
+            this.update.Size = new System.Drawing.Size(100, 25);
             this.update.TabIndex = 69;
             this.update.Text = "Изменить";
             this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(575, 150);
+            this.delete.Location = new System.Drawing.Point(322, 144);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(108, 30);
+            this.delete.Size = new System.Drawing.Size(100, 25);
             this.delete.TabIndex = 68;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(575, 114);
+            this.add.Location = new System.Drawing.Point(322, 113);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(108, 30);
+            this.add.Size = new System.Drawing.Size(100, 25);
             this.add.TabIndex = 67;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_service,
-            this.date_use,
-            this.number_check,
-            this.count_use});
-            this.dataGridView1.Location = new System.Drawing.Point(1, 113);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(547, 143);
-            this.dataGridView1.TabIndex = 66;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 16);
+            this.textBox1.Location = new System.Drawing.Point(172, 16);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(250, 23);
@@ -97,7 +85,7 @@ namespace Hotel_Database
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(161, 45);
+            this.textBox2.Location = new System.Drawing.Point(172, 45);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(250, 23);
@@ -116,7 +104,7 @@ namespace Hotel_Database
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(161, 74);
+            this.textBox3.Location = new System.Drawing.Point(172, 74);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(250, 23);
@@ -144,27 +132,42 @@ namespace Hotel_Database
             this.label1.TabIndex = 60;
             this.label1.Text = "Номер услуги";
             // 
-            // id_service
+            // dataGridView1
             // 
-            this.id_service.DataPropertyName = "Дополнительные_услуги_id_Дополнительные_услуги";
-            this.id_service.HeaderText = "Номер услуги";
-            this.id_service.Name = "id_service";
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.date_use,
+            this.id_arrival,
+            this.count_use});
+            this.dataGridView1.Location = new System.Drawing.Point(-2, 113);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(318, 149);
+            this.dataGridView1.TabIndex = 66;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // date_use
             // 
-            this.date_use.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.date_use.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.date_use.DataPropertyName = "Дата_пользования";
             this.date_use.HeaderText = "Дата";
             this.date_use.Name = "date_use";
+            this.date_use.Width = 67;
             // 
-            // number_check
+            // id_arrival
             // 
-            this.number_check.DataPropertyName = "Заезд_id_Заезд";
-            this.number_check.HeaderText = "Номер заезда";
-            this.number_check.Name = "number_check";
+            this.id_arrival.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id_arrival.DataPropertyName = "Заезд_id_Заезд";
+            this.id_arrival.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.id_arrival.HeaderText = "Номер заезда";
+            this.id_arrival.Name = "id_arrival";
+            this.id_arrival.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id_arrival.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // count_use
             // 
+            this.count_use.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.count_use.DataPropertyName = "Количество_пользований";
             this.count_use.HeaderText = "Кол-во пользований";
             this.count_use.Name = "count_use";
@@ -173,7 +176,7 @@ namespace Hotel_Database
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 349);
+            this.ClientSize = new System.Drawing.Size(434, 261);
             this.Controls.Add(this.update);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.add);
@@ -185,9 +188,11 @@ namespace Hotel_Database
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form8";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Просмотр информации о услуге";
+            this.Load += new System.EventHandler(this.Form8_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -199,16 +204,15 @@ namespace Hotel_Database
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button add;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_service;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_use;
-        private System.Windows.Forms.DataGridViewTextBoxColumn number_check;
-        private System.Windows.Forms.DataGridViewTextBoxColumn count_use;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_use;
+        private System.Windows.Forms.DataGridViewComboBoxColumn id_arrival;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count_use;
     }
 }
