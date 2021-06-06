@@ -1,7 +1,7 @@
 ﻿
 namespace Hotel_Database
 {
-    partial class Form3
+    partial class Form6
     {
         /// <summary>
         /// Required designer variable.
@@ -32,18 +32,16 @@ namespace Hotel_Database
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.add_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delete_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.save_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.update_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.info_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.back_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passport = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.post = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.info_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.count_children = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -53,14 +51,14 @@ namespace Hotel_Database
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.add_ToolStripMenuItem,
             this.delete_ToolStripMenuItem,
-            this.save_ToolStripMenuItem,
+            this.update_ToolStripMenuItem,
             this.info_ToolStripMenuItem,
             this.back_ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(484, 24);
-            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(734, 24);
+            this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // add_ToolStripMenuItem
@@ -77,12 +75,19 @@ namespace Hotel_Database
             this.delete_ToolStripMenuItem.Text = "Удаление";
             this.delete_ToolStripMenuItem.Click += new System.EventHandler(this.delete_ToolStripMenuItem_Click);
             // 
-            // save_ToolStripMenuItem
+            // update_ToolStripMenuItem
             // 
-            this.save_ToolStripMenuItem.Name = "save_ToolStripMenuItem";
-            this.save_ToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.save_ToolStripMenuItem.Text = "Сохранение";
-            this.save_ToolStripMenuItem.Click += new System.EventHandler(this.save_ToolStripMenuItem_Click);
+            this.update_ToolStripMenuItem.Name = "update_ToolStripMenuItem";
+            this.update_ToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.update_ToolStripMenuItem.Text = "Изменение";
+            this.update_ToolStripMenuItem.Click += new System.EventHandler(this.update_ToolStripMenuItem_Click);
+            // 
+            // info_ToolStripMenuItem
+            // 
+            this.info_ToolStripMenuItem.Name = "info_ToolStripMenuItem";
+            this.info_ToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.info_ToolStripMenuItem.Text = "Информация";
+            this.info_ToolStripMenuItem.Click += new System.EventHandler(this.info_ToolStripMenuItem_Click);
             // 
             // back_ToolStripMenuItem
             // 
@@ -93,93 +98,84 @@ namespace Hotel_Database
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.name,
             this.passport,
+            this.name_client,
             this.date,
-            this.address,
             this.number,
-            this.post,
-            this.cost});
+            this.count_children});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(484, 437);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.Size = new System.Drawing.Size(734, 437);
+            this.dataGridView1.TabIndex = 28;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // id
             // 
-            this.id.HeaderText = "Column1";
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id.DataPropertyName = "id_Клиент";
+            this.id.HeaderText = "Номер клиента";
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Width = 110;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.HeaderText = "Column2";
-            this.name.Name = "name";
             // 
             // passport
             // 
-            this.passport.HeaderText = "Column3";
+            this.passport.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.passport.DataPropertyName = "Номер_и_серия_паспорта";
+            this.passport.HeaderText = "Паспорт";
             this.passport.Name = "passport";
-            this.passport.Width = 90;
+            this.passport.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.passport.Width = 89;
+            // 
+            // name_client
+            // 
+            this.name_client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.name_client.DataPropertyName = "ФИО_клиента";
+            this.name_client.HeaderText = "ФИО Клиента";
+            this.name_client.Name = "name_client";
+            this.name_client.Width = 116;
             // 
             // date
             // 
-            this.date.HeaderText = "Column4";
+            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.date.DataPropertyName = "Дата_рождения";
+            this.date.HeaderText = "Дата рождения";
             this.date.Name = "date";
-            this.date.Width = 90;
-            // 
-            // address
-            // 
-            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.address.HeaderText = "Column5";
-            this.address.Name = "address";
             // 
             // number
             // 
-            this.number.HeaderText = "Column6";
+            this.number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.number.DataPropertyName = "Номер_телефона";
+            this.number.HeaderText = "Телефон";
             this.number.Name = "number";
-            this.number.Width = 90;
+            this.number.Width = 93;
             // 
-            // post
+            // count_children
             // 
-            this.post.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.post.HeaderText = "Column7";
-            this.post.Name = "post";
+            this.count_children.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.count_children.DataPropertyName = "Количество_детей";
+            this.count_children.HeaderText = "Кол-во детей";
+            this.count_children.Name = "count_children";
             // 
-            // cost
-            // 
-            this.cost.HeaderText = "Column8";
-            this.cost.Name = "cost";
-            // 
-            // info_ToolStripMenuItem
-            // 
-            this.info_ToolStripMenuItem.Name = "info_ToolStripMenuItem";
-            this.info_ToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
-            this.info_ToolStripMenuItem.Text = "Информация";
-            this.info_ToolStripMenuItem.Click += new System.EventHandler(this.info_ToolStripMenuItem_Click);
-            // 
-            // Form3
+            // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(734, 461);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form3";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "Form6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Универсальная форма";
-            this.Load += new System.EventHandler(this.Form3_Load);
+            this.Text = "Список клиентов";
+            this.Load += new System.EventHandler(this.Form6_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -193,17 +189,15 @@ namespace Hotel_Database
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem add_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem delete_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem update_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem info_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem back_ToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStripMenuItem save_ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn passport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_client;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn post;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
-        private System.Windows.Forms.ToolStripMenuItem info_ToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count_children;
     }
 }

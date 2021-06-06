@@ -39,6 +39,8 @@ namespace Hotel_Database
                         // Устанавливаем заголовок формы
                         this.Text = "Список размещений";
 
+                        info_ToolStripMenuItem.Visible = false;
+
                         // Настраиваем стобец "Номер размещения"
                         id.HeaderText = "Номер размещения";
                         id.DataPropertyName = "id_Размещение";
@@ -67,6 +69,8 @@ namespace Hotel_Database
                     {
                         // Устанавливаем заголовок формы
                         this.Text = "Список комфортностей";
+
+                        info_ToolStripMenuItem.Visible = false;
 
                         // Настраиваем стобец "Номер комфортности"
                         id.HeaderText = "Номер комфортности";
@@ -129,9 +133,14 @@ namespace Hotel_Database
                         // Устанавливаем заголовок формы
                         this.Text = "Список сотрудников";
 
+                        info_ToolStripMenuItem.Visible = false;
+
                         // Устанавливаем размер формы
                         this.Width = 1000;
                         this.Height = 500;
+
+                        // Перемещаем форму в центр
+                        this.CenterToScreen();
 
                         // Настраиваем стобец "Номер сотрудника"
                         id.HeaderText = "Номер сотрудника";
@@ -239,6 +248,11 @@ namespace Hotel_Database
             }
             catch { MessageBox.Show("Необходимо заполнить добавленную строку", "Внимание!"); }
         }
+        private void info_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form8 form8 = new Form8();
+            form8.ShowDialog();
+        }
 
         private void back_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -247,5 +261,7 @@ namespace Hotel_Database
             form2.ShowDialog();
             Close();
         }
+
+
     }
 }

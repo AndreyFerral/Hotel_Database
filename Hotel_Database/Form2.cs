@@ -50,5 +50,29 @@ namespace Hotel_Database
             form3.ShowDialog();
             Close();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form4 form4 = new Form4();
+            form4.ShowDialog();
+            Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form6 form6 = new Form6();
+            form6.ShowDialog();
+            Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form9 form9 = new Form9();
+            form9.ShowDialog();
+            Close();
+        }
     }
 }
