@@ -13,14 +13,6 @@ namespace Hotel_Database
             pricePerStay, priceForAddServe, fine, scheduledDateLeave, 
             dateArrival, dateLeave, peopleNum;
 
-        private void back_ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
-            Close();
-        }
-
         public Form11()
         {
             InitializeComponent();
@@ -39,7 +31,6 @@ namespace Hotel_Database
             idRoomComboBox();
             nameClientComboBox();
             idReservationComboBox();
-
 
             // Запускаем процедуру выборки данных
             loadData();
@@ -65,6 +56,168 @@ namespace Hotel_Database
                 dateLeave = dataGridView1[10, indexSelectRow].Value.ToString();
                 peopleNum = dataGridView1[11, indexSelectRow].Value.ToString();
             }
+        }
+        private void add_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Берем значения для добавления из предпоследней строчки (последняя - пустая)
+                indexSelectRow = dataGridView1.Rows.Count - 2;
+                idАrrival = dataGridView1[0, indexSelectRow].Value.ToString();
+                nameStaff = dataGridView1[1, indexSelectRow].Value.ToString();
+                idRoom = dataGridView1[2, indexSelectRow].Value.ToString();
+                nameClient = dataGridView1[3, indexSelectRow].Value.ToString();
+                idReservation = dataGridView1[4, indexSelectRow].Value.ToString();
+                pricePerStay = dataGridView1[5, indexSelectRow].Value.ToString();
+                priceForAddServe = dataGridView1[6, indexSelectRow].Value.ToString();
+                fine = dataGridView1[7, indexSelectRow].Value.ToString();
+                scheduledDateLeave = dataGridView1[8, indexSelectRow].Value.ToString();
+                dateArrival = dataGridView1[9, indexSelectRow].Value.ToString();
+                dateLeave = dataGridView1[10, indexSelectRow].Value.ToString();
+                peopleNum = dataGridView1[11, indexSelectRow].Value.ToString();
+
+                myConn.Open();
+                // Остальные поля могут быть нулевыми
+                if (nameStaff.Trim() == "" || idRoom.Trim() == "" ||
+                    nameClient.Trim() == "" || scheduledDateLeave.Trim() == "" ||
+                    dateArrival.Trim() == "" ||  peopleNum.Trim() == "") throw new Exception();
+
+                string procedure = "execute add_arrival @workerName = @p1, @clientName = @p2, @room = @p3, ";
+                if (idReservation != "") procedure = procedure + "@idReservation = @p4, ";
+                if (pricePerStay != "") procedure = procedure + "@pricePerStay = @p5, ";
+                if (priceForAddServe != "") procedure = procedure + "@priceForAddServe = @p6, ";
+                if (fine != "") procedure = procedure + "@fine = @p7, ";
+                procedure = procedure + "@dateArrival = @p8, @scheduledDateLeave = @p9, ";
+                if (dateLeave != "") procedure = procedure + "@dateLeave = @p10, ";
+                procedure = procedure + "@peopleNum = @p11";
+
+                // Создать команду для добавления
+                SqlCommand myComm = new SqlCommand(procedure, myConn);
+
+                // Создать параметр и передать в него значение текстового поля 
+                myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p1"].Value = nameStaff;
+
+                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p2"].Value = nameClient;
+
+                myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p3"].Value = idRoom;
+
+                if (idReservation != "")
+                {
+                    myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p4"].Value = idReservation;
+                }
+                if (pricePerStay != "")
+                {
+                    myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p5"].Value = pricePerStay;
+                }
+                if (priceForAddServe != "")
+                {
+                    myComm.Parameters.Add("@p6", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p6"].Value = priceForAddServe;
+                }
+                if (fine != "")
+                {
+                    myComm.Parameters.Add("@p7", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p7"].Value = fine;
+                }
+
+                myComm.Parameters.Add("@p8", SqlDbType.SmallDateTime);
+                myComm.Parameters["@p8"].Value = dateArrival;
+
+                myComm.Parameters.Add("@p9", SqlDbType.SmallDateTime);
+                myComm.Parameters["@p9"].Value = scheduledDateLeave;
+
+                if (dateLeave != "")
+                {
+                    myComm.Parameters.Add("@p10", SqlDbType.SmallDateTime);
+                    myComm.Parameters["@p10"].Value = dateLeave;
+                }
+
+                myComm.Parameters.Add("@p11", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p11"].Value = peopleNum;
+
+                // Выполнить запрос на изменение без возвращения результата
+                myComm.ExecuteNonQuery();
+                myConn.Close();
+
+                // Обновляем содержимое 
+                loadData();
+            }
+            catch
+            {
+                myConn.Close();
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                                " 1. Возможно вы пытаетесь добавить пустую строку.", "Внимание!");
+            }
+        }
+
+        private void delete_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("Данная информация будет удалена. Продолжить?", "Внимание!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    myConn.Open();
+                    if (idАrrival == "") throw new Exception();
+
+                    // Создать команду для удаления
+                    SqlCommand myComm = new SqlCommand("execute delete_arrival @p1", myConn);
+
+                    // Создать параметр и передать в него значение текстового поля 
+                    myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p1"].Value = idАrrival;
+
+                    // Выполнить запрос на удаление без возвращения результата
+                    myComm.ExecuteReader();
+                    myConn.Close();
+
+                    // Обновляем содержимое 
+                    loadData();
+                }
+            }
+            catch
+            {
+                myConn.Close();
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                                " 1. Возможно вы пытаетесь удалить пустую строку.", "Внимание!");
+            }
+        }
+
+        private void update_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void info_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (idАrrival.Trim() == "") throw new Exception();
+
+                Form12 form12 = new Form12(idАrrival, nameStaff, idRoom, nameClient, idReservation,
+                    pricePerStay, priceForAddServe, fine, scheduledDateLeave,
+                    dateArrival, dateLeave, peopleNum);
+
+                form12.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                                "1. Возможно вы пытаетесь посмотреть информацию о несуществующих данных.", "Внимание!");
+            }
+        }
+
+        private void back_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+            Close();
         }
 
         private void nameStaffComboBox()

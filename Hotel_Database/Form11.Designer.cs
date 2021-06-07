@@ -72,24 +72,28 @@ namespace Hotel_Database
             this.add_ToolStripMenuItem.Name = "add_ToolStripMenuItem";
             this.add_ToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.add_ToolStripMenuItem.Text = "Добавление";
+            this.add_ToolStripMenuItem.Click += new System.EventHandler(this.add_ToolStripMenuItem_Click);
             // 
             // delete_ToolStripMenuItem
             // 
             this.delete_ToolStripMenuItem.Name = "delete_ToolStripMenuItem";
             this.delete_ToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.delete_ToolStripMenuItem.Text = "Удаление";
+            this.delete_ToolStripMenuItem.Click += new System.EventHandler(this.delete_ToolStripMenuItem_Click);
             // 
             // update_ToolStripMenuItem
             // 
             this.update_ToolStripMenuItem.Name = "update_ToolStripMenuItem";
             this.update_ToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.update_ToolStripMenuItem.Text = "Изменение";
+            this.update_ToolStripMenuItem.Click += new System.EventHandler(this.update_ToolStripMenuItem_Click);
             // 
             // info_ToolStripMenuItem
             // 
             this.info_ToolStripMenuItem.Name = "info_ToolStripMenuItem";
             this.info_ToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.info_ToolStripMenuItem.Text = "Информация";
+            this.info_ToolStripMenuItem.Click += new System.EventHandler(this.info_ToolStripMenuItem_Click);
             // 
             // back_ToolStripMenuItem
             // 
@@ -223,7 +227,7 @@ namespace Hotel_Database
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form11";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список заездов";
