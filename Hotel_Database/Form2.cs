@@ -90,5 +90,13 @@ namespace Hotel_Database
             form13.ShowDialog();
             Close();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form14 form14 = new Form14();
+            form14.ShowDialog();
+            Close();
+        }
     }
 }

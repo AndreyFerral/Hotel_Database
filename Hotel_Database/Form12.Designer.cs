@@ -307,7 +307,7 @@ namespace Hotel_Database
             this.tabPage4.Controls.Add(this.dataGridView4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(926, 178);
+            this.tabPage4.Size = new System.Drawing.Size(926, 101);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Бронирование";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -332,7 +332,7 @@ namespace Hotel_Database
             this.dataGridView4.Location = new System.Drawing.Point(0, 0);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(926, 178);
+            this.dataGridView4.Size = new System.Drawing.Size(926, 101);
             this.dataGridView4.TabIndex = 72;
             // 
             // dataGridViewTextBoxColumn5
