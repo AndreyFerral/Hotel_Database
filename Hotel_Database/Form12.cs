@@ -41,8 +41,10 @@ namespace Hotel_Database
             myConn.ConnectionString = StrConn;
 
             // Запускаем процедуру выборки данных
-            //loadData1();
-            //loadData2();
+            loadDataStaff();
+            loadDataRoom();
+            loadDataClient();
+            loadDataReservation();
 
             // Устанавливаем значения полям
             textBox1.Text = idАrrival;
@@ -57,6 +59,66 @@ namespace Hotel_Database
             textBox10.Text = dateArrival;
             textBox11.Text = dateLeave;
             textBox12.Text = peopleNum;
+        }
+
+        private void loadDataStaff()
+        {
+            myConn.Open();
+            SqlCommand myComm = new SqlCommand("select*from dbo.Сотрудники where ФИО_сотрудника = @p1", myConn);
+
+            // Создать параметр и передать в него значение текстового поля 
+            myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+            myComm.Parameters["@p1"].Value = nameStaff;
+            SqlDataReader myReader = myComm.ExecuteReader();
+
+            DataTable dtbl = new DataTable(); dtbl.Load(myReader);
+            dataGridView2.DataSource = dtbl;
+            myConn.Close();
+        }
+
+        private void loadDataReservation()
+        {
+            myConn.Open();
+            SqlCommand myComm = new SqlCommand("select*from dbo.View_Reservation where id_Бронирование = @p1", myConn);
+
+            // Создать параметр и передать в него значение текстового поля 
+            myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+            myComm.Parameters["@p1"].Value = idReservation;
+            SqlDataReader myReader = myComm.ExecuteReader();
+
+            DataTable dtbl = new DataTable(); dtbl.Load(myReader);
+            dataGridView4.DataSource = dtbl;
+            myConn.Close();
+        }
+
+        private void loadDataClient()
+        {
+            myConn.Open();
+            SqlCommand myComm = new SqlCommand("select*from dbo.Клиент where ФИО_клиента = @p1", myConn);
+
+            // Создать параметр и передать в него значение текстового поля 
+            myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+            myComm.Parameters["@p1"].Value = nameClient;
+            SqlDataReader myReader = myComm.ExecuteReader();
+
+            DataTable dtbl = new DataTable(); dtbl.Load(myReader);
+            dataGridView3.DataSource = dtbl;
+            myConn.Close();
+        }
+
+        private void loadDataRoom()
+        {
+            myConn.Open();
+            SqlCommand myComm = new SqlCommand("select*from dbo.View_Room where Номер_комнаты = @p1", myConn);
+
+            // Создать параметр и передать в него значение текстового поля 
+            myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+            myComm.Parameters["@p1"].Value = idRoom;
+            SqlDataReader myReader = myComm.ExecuteReader();
+
+            DataTable dtbl = new DataTable(); dtbl.Load(myReader);
+            dataGridView1.DataSource = dtbl;
+            myConn.Close();
         }
     }
 }
