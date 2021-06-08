@@ -13,33 +13,6 @@ namespace Hotel_Database
             dateReservation, scheduledDateArrival, scheduledDateLeave, 
             peopleNum, reservationType, reservaionPrice;
 
-        private void info_ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (idReservation.Trim() == "") throw new Exception();
-
-                Form15 form15 = new Form15(idReservation, roomNumber, workerName, clientName,
-                                            dateReservation, scheduledDateArrival, scheduledDateLeave,
-                                            peopleNum, reservationType, reservaionPrice);
-
-                form15.ShowDialog();
-            }
-            catch
-            {
-                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
-                                "1. Возможно вы пытаетесь посмотреть информацию о несуществующих данных.", "Внимание!");
-            }
-        }
-
-        private void back_ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
-            Close();
-        }
-
         public Form14()
         {
             InitializeComponent();
@@ -82,8 +55,47 @@ namespace Hotel_Database
             }
         }
 
+        private void add_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void delete_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void update_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void info_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (idReservation.Trim() == "") throw new Exception();
+
+                Form15 form15 = new Form15(idReservation, roomNumber, workerName, clientName,
+                                            dateReservation, scheduledDateArrival, scheduledDateLeave,
+                                            peopleNum, reservationType, reservaionPrice);
+
+                form15.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                                "1. Возможно вы пытаетесь посмотреть информацию о несуществующих данных.", "Внимание!");
+            }
+        }
+
+        private void back_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+            Close();
+        }
 
 
         private void nameStaffComboBox()

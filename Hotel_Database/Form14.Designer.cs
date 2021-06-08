@@ -70,18 +70,21 @@ namespace Hotel_Database
             this.add_ToolStripMenuItem.Name = "add_ToolStripMenuItem";
             this.add_ToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.add_ToolStripMenuItem.Text = "Добавление";
+            this.add_ToolStripMenuItem.Click += new System.EventHandler(this.add_ToolStripMenuItem_Click);
             // 
             // delete_ToolStripMenuItem
             // 
             this.delete_ToolStripMenuItem.Name = "delete_ToolStripMenuItem";
             this.delete_ToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.delete_ToolStripMenuItem.Text = "Удаление";
+            this.delete_ToolStripMenuItem.Click += new System.EventHandler(this.delete_ToolStripMenuItem_Click);
             // 
             // update_ToolStripMenuItem
             // 
             this.update_ToolStripMenuItem.Name = "update_ToolStripMenuItem";
             this.update_ToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.update_ToolStripMenuItem.Text = "Изменение";
+            this.update_ToolStripMenuItem.Click += new System.EventHandler(this.update_ToolStripMenuItem_Click);
             // 
             // info_ToolStripMenuItem
             // 

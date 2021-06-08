@@ -76,6 +76,14 @@ namespace Hotel_Database
                 dateLeave = dataGridView1[10, indexSelectRow].Value.ToString();
                 peopleNum = dataGridView1[11, indexSelectRow].Value.ToString();
 
+                // надо фиксить - если запятой не будет, то исключение
+                // удаляем лишние знаки
+                /*
+                pricePerStay = pricePerStay.Substring(0, pricePerStay.LastIndexOf(','));
+                priceForAddServe = priceForAddServe.Substring(0, priceForAddServe.LastIndexOf(','));
+                fine = fine.Substring(0, fine.LastIndexOf(','));
+                */
+
                 myConn.Open();
                 // Остальные поля могут быть нулевыми
                 if (nameStaff.Trim() == "" || idRoom.Trim() == "" ||
@@ -190,7 +198,101 @@ namespace Hotel_Database
 
         private void update_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                idАrrival = dataGridView1[0, indexSelectRow].Value.ToString();
+                nameStaff = dataGridView1[1, indexSelectRow].Value.ToString();
+                idRoom = dataGridView1[2, indexSelectRow].Value.ToString();
+                nameClient = dataGridView1[3, indexSelectRow].Value.ToString();
+                idReservation = dataGridView1[4, indexSelectRow].Value.ToString();
+                pricePerStay = dataGridView1[5, indexSelectRow].Value.ToString();
+                priceForAddServe = dataGridView1[6, indexSelectRow].Value.ToString();
+                fine = dataGridView1[7, indexSelectRow].Value.ToString();
+                scheduledDateLeave = dataGridView1[8, indexSelectRow].Value.ToString();
+                dateArrival = dataGridView1[9, indexSelectRow].Value.ToString();
+                dateLeave = dataGridView1[10, indexSelectRow].Value.ToString();
+                peopleNum = dataGridView1[11, indexSelectRow].Value.ToString();
 
+                myConn.Open();
+                // Остальные поля могут быть нулевыми
+                if (nameStaff.Trim() == "" || idRoom.Trim() == "" ||
+                    nameClient.Trim() == "" || scheduledDateLeave.Trim() == "" ||
+                    dateArrival.Trim() == "" || peopleNum.Trim() == "") throw new Exception();
+
+                string procedure = "execute update_arrival @workerName = @p1, @clientName = @p2, @room = @p3, ";
+                if (idReservation != "") procedure = procedure + "@idReservation = @p4, ";
+                if (pricePerStay != "") procedure = procedure + "@pricePerStay = @p5, ";
+                if (priceForAddServe != "") procedure = procedure + "@priceForAddServe = @p6, ";
+                if (fine != "") procedure = procedure + "@fine = @p7, ";
+                procedure = procedure + "@dateArrival = @p8, @scheduledDateLeave = @p9, ";
+                if (dateLeave != "") procedure = procedure + "@dateLeave = @p10, ";
+                procedure = procedure + "@peopleNum = @p11, @idArrival = @p12";
+
+                // Создать команду для добавления
+                SqlCommand myComm = new SqlCommand(procedure, myConn);
+
+                // Создать параметр и передать в него значение текстового поля 
+                myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p1"].Value = nameStaff;
+
+                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p2"].Value = nameClient;
+
+                myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p3"].Value = idRoom;
+
+                if (idReservation != "")
+                {
+                    myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p4"].Value = idReservation;
+                }
+                if (pricePerStay != "")
+                {
+                    myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p5"].Value = pricePerStay;
+                }
+                if (priceForAddServe != "")
+                {
+                    myComm.Parameters.Add("@p6", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p6"].Value = priceForAddServe;
+                }
+                if (fine != "")
+                {
+                    myComm.Parameters.Add("@p7", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p7"].Value = fine;
+                }
+
+                myComm.Parameters.Add("@p8", SqlDbType.SmallDateTime);
+                myComm.Parameters["@p8"].Value = dateArrival;
+
+                myComm.Parameters.Add("@p9", SqlDbType.SmallDateTime);
+                myComm.Parameters["@p9"].Value = scheduledDateLeave;
+
+                if (dateLeave != "")
+                {
+                    myComm.Parameters.Add("@p10", SqlDbType.SmallDateTime);
+                    myComm.Parameters["@p10"].Value = dateLeave;
+                }
+
+                myComm.Parameters.Add("@p11", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p11"].Value = peopleNum;
+
+                myComm.Parameters.Add("@p12", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p12"].Value = idАrrival;
+
+                // Выполнить запрос на изменение без возвращения результата
+                myComm.ExecuteNonQuery();
+                myConn.Close();
+
+                // Обновляем содержимое 
+                loadData();
+            }
+            catch
+            {
+                myConn.Close();
+                MessageBox.Show("Ошибка. Возможное решение:\n\n " +
+                                " 1. Возможно вы пытаетесь редактировать пустую строку.", "Внимание!");
+            }
         }
 
         private void info_ToolStripMenuItem_Click(object sender, EventArgs e)
