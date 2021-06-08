@@ -55,6 +55,18 @@ namespace Hotel_Database
             }
         }
 
+        private void addBig_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form17 form17 = new Form17();
+            form17.ShowDialog();
+
+            // Перезапускаем форму для обновления данных
+            this.Hide();
+            Form14 form14 = new Form14();
+            form14.ShowDialog();
+            this.Close();
+        }
+
         private void add_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try

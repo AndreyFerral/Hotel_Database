@@ -129,23 +129,22 @@ namespace Hotel_Database
                 myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p3"].Value = idRoom;
 
-                if (idReservation != "")
-                {
+                if (idReservation != "") {
                     myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
                     myComm.Parameters["@p4"].Value = idReservation;
                 }
-                if (pricePerStay != "")
-                {
+
+                if (pricePerStay != "") {
                     myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
                     myComm.Parameters["@p5"].Value = pricePerStay;
                 }
-                if (priceForAddServe != "")
-                {
+
+                if (priceForAddServe != "") {
                     myComm.Parameters.Add("@p6", SqlDbType.NVarChar, 100);
                     myComm.Parameters["@p6"].Value = priceForAddServe;
                 }
-                if (fine != "")
-                {
+
+                if (fine != "") {
                     myComm.Parameters.Add("@p7", SqlDbType.NVarChar, 100);
                     myComm.Parameters["@p7"].Value = fine;
                 }

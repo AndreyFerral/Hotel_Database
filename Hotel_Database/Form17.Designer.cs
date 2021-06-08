@@ -1,7 +1,7 @@
 ﻿
 namespace Hotel_Database
 {
-    partial class Form16
+    partial class Form17
     {
         /// <summary>
         /// Required designer variable.
@@ -29,26 +29,28 @@ namespace Hotel_Database
         /// </summary>
         private void InitializeComponent()
         {
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -59,233 +61,245 @@ namespace Hotel_Database
             this.label22 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.add = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label9
+            // textBox8
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(17, 296);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 17);
-            this.label9.TabIndex = 133;
-            this.label9.Text = "Дата выезда";
+            this.textBox8.Location = new System.Drawing.Point(178, 240);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(250, 23);
+            this.textBox8.TabIndex = 153;
             // 
-            // textBox11
+            // textBox9
             // 
-            this.textBox11.Location = new System.Drawing.Point(177, 322);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(250, 23);
-            this.textBox11.TabIndex = 130;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label11.Location = new System.Drawing.Point(17, 325);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 17);
-            this.label11.TabIndex = 129;
-            this.label11.Text = "Количество человек";
+            this.textBox9.Location = new System.Drawing.Point(178, 269);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(250, 23);
+            this.textBox9.TabIndex = 152;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label12.Location = new System.Drawing.Point(17, 267);
+            this.label12.Location = new System.Drawing.Point(18, 272);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 17);
-            this.label12.TabIndex = 128;
-            this.label12.Text = "Дата заезда";
+            this.label12.Size = new System.Drawing.Size(135, 17);
+            this.label12.TabIndex = 151;
+            this.label12.Text = "Сумма предоплаты";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label13.Location = new System.Drawing.Point(17, 238);
+            this.label13.Location = new System.Drawing.Point(18, 243);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(157, 17);
-            this.label13.TabIndex = 126;
-            this.label13.Text = "Дата выезда по плану";
+            this.label13.Size = new System.Drawing.Size(77, 17);
+            this.label13.TabIndex = 150;
+            this.label13.Text = "Тип брони";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(17, 121);
+            this.label5.Location = new System.Drawing.Point(18, 125);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 17);
-            this.label5.TabIndex = 125;
-            this.label5.Text = "Номер брони";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(177, 147);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 23);
-            this.textBox5.TabIndex = 124;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(177, 176);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(250, 23);
-            this.textBox6.TabIndex = 123;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(177, 206);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(250, 23);
-            this.textBox7.TabIndex = 122;
+            this.label5.Size = new System.Drawing.Size(86, 17);
+            this.label5.TabIndex = 149;
+            this.label5.Text = "Дата брони";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(17, 209);
+            this.label6.Location = new System.Drawing.Point(18, 214);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 17);
-            this.label6.TabIndex = 121;
-            this.label6.Text = "Размер штрафа";
+            this.label6.Size = new System.Drawing.Size(144, 17);
+            this.label6.TabIndex = 145;
+            this.label6.Text = "Количество человек";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(178, 211);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(250, 23);
+            this.textBox7.TabIndex = 144;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(17, 180);
+            this.label7.Location = new System.Drawing.Point(18, 185);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 17);
-            this.label7.TabIndex = 119;
-            this.label7.Text = "Цена за услуги";
+            this.label7.Size = new System.Drawing.Size(157, 17);
+            this.label7.TabIndex = 143;
+            this.label7.Text = "Дата выезда по плану";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(17, 150);
+            this.label8.Location = new System.Drawing.Point(18, 154);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(146, 17);
-            this.label8.TabIndex = 118;
-            this.label8.Text = "Цена за проживание";
+            this.label8.Size = new System.Drawing.Size(155, 17);
+            this.label8.TabIndex = 142;
+            this.label8.Text = "Дата заезда по плану";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(17, 92);
+            this.label4.Location = new System.Drawing.Point(18, 94);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 17);
-            this.label4.TabIndex = 117;
+            this.label4.TabIndex = 141;
             this.label4.Text = "Клиент";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(17, 63);
+            this.label3.Location = new System.Drawing.Point(18, 64);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 17);
-            this.label3.TabIndex = 113;
-            this.label3.Text = "Номер комнаты";
+            this.label3.Size = new System.Drawing.Size(78, 17);
+            this.label3.TabIndex = 137;
+            this.label3.Text = "Сотрудник";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(17, 34);
+            this.label2.Location = new System.Drawing.Point(18, 34);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 17);
-            this.label2.TabIndex = 111;
-            this.label2.Text = "Сотрудник";
+            this.label2.Size = new System.Drawing.Size(112, 17);
+            this.label2.TabIndex = 135;
+            this.label2.Text = "Номер комнаты";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dateTimePicker6);
             this.groupBox1.Controls.Add(this.dateTimePicker5);
-            this.groupBox1.Controls.Add(this.dateTimePicker4);
-            this.groupBox1.Controls.Add(this.dateTimePicker3);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox4);
             this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.dateTimePicker4);
             this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.dateTimePicker3);
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.textBox8);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(438, 357);
-            this.groupBox1.TabIndex = 134;
+            this.groupBox1.Size = new System.Drawing.Size(444, 308);
+            this.groupBox1.TabIndex = 154;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Данные заезда";
+            this.groupBox1.Text = "Данные бронирования";
             // 
-            // comboBox4
+            // dateTimePicker6
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(177, 118);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(250, 24);
-            this.comboBox4.TabIndex = 138;
+            this.dateTimePicker6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker6.Location = new System.Drawing.Point(304, 180);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.ShowUpDown = true;
+            this.dateTimePicker6.Size = new System.Drawing.Size(124, 23);
+            this.dateTimePicker6.TabIndex = 159;
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.CustomFormat = "dd.MM.yyyy HH:mm:ss";
+            this.dateTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker5.Location = new System.Drawing.Point(178, 180);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(120, 23);
+            this.dateTimePicker5.TabIndex = 157;
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(177, 89);
+            this.comboBox3.Location = new System.Drawing.Point(178, 91);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(250, 24);
-            this.comboBox3.TabIndex = 138;
+            this.comboBox3.TabIndex = 155;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker4.Location = new System.Drawing.Point(304, 151);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.ShowUpDown = true;
+            this.dateTimePicker4.Size = new System.Drawing.Size(124, 23);
+            this.dateTimePicker4.TabIndex = 160;
             // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(177, 60);
+            this.comboBox2.Location = new System.Drawing.Point(178, 61);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(250, 24);
-            this.comboBox2.TabIndex = 138;
+            this.comboBox2.TabIndex = 155;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CustomFormat = "dd.MM.yyyy HH:mm:ss";
+            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(178, 151);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(120, 23);
+            this.dateTimePicker3.TabIndex = 158;
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(177, 31);
+            this.comboBox1.Location = new System.Drawing.Point(178, 31);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(250, 24);
-            this.comboBox1.TabIndex = 137;
+            this.comboBox1.TabIndex = 154;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker2.Location = new System.Drawing.Point(304, 122);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.ShowUpDown = true;
+            this.dateTimePicker2.Size = new System.Drawing.Size(124, 23);
+            this.dateTimePicker2.TabIndex = 156;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd.MM.yyyy HH:mm:ss";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(178, 122);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(120, 23);
+            this.dateTimePicker1.TabIndex = 155;
             // 
             // groupBox2
             // 
@@ -300,7 +314,7 @@ namespace Hotel_Database
             this.groupBox2.Location = new System.Drawing.Point(471, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(438, 150);
-            this.groupBox2.TabIndex = 135;
+            this.groupBox2.TabIndex = 155;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Данные клиента";
             // 
@@ -380,89 +394,28 @@ namespace Hotel_Database
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(753, 314);
+            this.add.Location = new System.Drawing.Point(753, 252);
             this.add.Margin = new System.Windows.Forms.Padding(4);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(150, 50);
-            this.add.TabIndex = 136;
+            this.add.TabIndex = 156;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd.MM.yyyy HH:mm:ss";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(177, 235);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(120, 23);
-            this.dateTimePicker1.TabIndex = 139;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(303, 235);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(124, 23);
-            this.dateTimePicker2.TabIndex = 140;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.CustomFormat = "dd.MM.yyyy HH:mm:ss";
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(177, 264);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(120, 23);
-            this.dateTimePicker3.TabIndex = 141;
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker4.Location = new System.Drawing.Point(303, 264);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.ShowUpDown = true;
-            this.dateTimePicker4.Size = new System.Drawing.Size(124, 23);
-            this.dateTimePicker4.TabIndex = 142;
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.CustomFormat = "dd.MM.yyyy HH:mm:ss";
-            this.dateTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker5.Location = new System.Drawing.Point(177, 293);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(120, 23);
-            this.dateTimePicker5.TabIndex = 141;
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker6.Location = new System.Drawing.Point(303, 293);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.ShowUpDown = true;
-            this.dateTimePicker6.Size = new System.Drawing.Size(124, 23);
-            this.dateTimePicker6.TabIndex = 142;
-            // 
-            // Form16
+            // Form17
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 377);
+            this.ClientSize = new System.Drawing.Size(920, 329);
             this.Controls.Add(this.add);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form16";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Расширенное добавление заезда";
-            this.Load += new System.EventHandler(this.Form16_Load);
+            this.Name = "Form17";
+            this.Text = "Расширенное добавление бронирования";
+            this.Load += new System.EventHandler(this.Form17_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -473,41 +426,37 @@ namespace Hotel_Database
 
         #endregion
 
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker7;
-        private System.Windows.Forms.Button add;
         private System.Windows.Forms.DateTimePicker dateTimePicker6;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker7;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Button add;
     }
 }

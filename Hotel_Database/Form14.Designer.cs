@@ -46,6 +46,7 @@ namespace Hotel_Database
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addBig_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@ namespace Hotel_Database
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.add_ToolStripMenuItem,
+            this.addBig_ToolStripMenuItem,
             this.delete_ToolStripMenuItem,
             this.update_ToolStripMenuItem,
             this.info_ToolStripMenuItem,
@@ -204,6 +206,13 @@ namespace Hotel_Database
             this.Column2.HeaderText = "Сумма предоплаты";
             this.Column2.Name = "Column2";
             // 
+            // addBig_ToolStripMenuItem
+            // 
+            this.addBig_ToolStripMenuItem.Name = "addBig_ToolStripMenuItem";
+            this.addBig_ToolStripMenuItem.Size = new System.Drawing.Size(174, 20);
+            this.addBig_ToolStripMenuItem.Text = "Добавление (расширенное)";
+            this.addBig_ToolStripMenuItem.Click += new System.EventHandler(this.addBig_ToolStripMenuItem_Click);
+            // 
             // Form14
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,5 +253,6 @@ namespace Hotel_Database
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.ToolStripMenuItem addBig_ToolStripMenuItem;
     }
 }
