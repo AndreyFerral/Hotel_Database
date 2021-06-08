@@ -36,6 +36,18 @@ namespace Hotel_Database
             loadData();
         }
 
+        private void addBig_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form16 form16 = new Form16();
+            form16.ShowDialog();
+
+            // Перезапускаем форму для обновления данных
+            this.Hide();
+            Form11 form11 = new Form11();
+            form11.ShowDialog();
+            this.Close();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Для того, чтобы не обновлялись значения, если нажатия происходит в одной строке
