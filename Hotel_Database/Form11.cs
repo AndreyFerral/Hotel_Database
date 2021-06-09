@@ -51,7 +51,7 @@ namespace Hotel_Database
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Для того, чтобы не обновлялись значения, если нажатия происходит в одной строке
-            if (e.RowIndex != indexSelectRow)
+            if (e.RowIndex != indexSelectRow && e.RowIndex != -1)
             {
                 indexSelectRow = e.RowIndex;
 
@@ -131,17 +131,17 @@ namespace Hotel_Database
                 }
                 if (pricePerStay != "")
                 {
-                    myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
+                    myComm.Parameters.Add("@p5", SqlDbType.Money);
                     myComm.Parameters["@p5"].Value = pricePerStay;
                 }
                 if (priceForAddServe != "")
                 {
-                    myComm.Parameters.Add("@p6", SqlDbType.NVarChar, 100);
+                    myComm.Parameters.Add("@p6", SqlDbType.Money);
                     myComm.Parameters["@p6"].Value = priceForAddServe;
                 }
                 if (fine != "")
                 {
-                    myComm.Parameters.Add("@p7", SqlDbType.NVarChar, 100);
+                    myComm.Parameters.Add("@p7", SqlDbType.Money);
                     myComm.Parameters["@p7"].Value = fine;
                 }
 
@@ -260,17 +260,17 @@ namespace Hotel_Database
                 }
                 if (pricePerStay != "")
                 {
-                    myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
+                    myComm.Parameters.Add("@p5", SqlDbType.Money);
                     myComm.Parameters["@p5"].Value = pricePerStay;
                 }
                 if (priceForAddServe != "")
                 {
-                    myComm.Parameters.Add("@p6", SqlDbType.NVarChar, 100);
+                    myComm.Parameters.Add("@p6", SqlDbType.Money);
                     myComm.Parameters["@p6"].Value = priceForAddServe;
                 }
                 if (fine != "")
                 {
-                    myComm.Parameters.Add("@p7", SqlDbType.NVarChar, 100);
+                    myComm.Parameters.Add("@p7", SqlDbType.Money);
                     myComm.Parameters["@p7"].Value = fine;
                 }
 

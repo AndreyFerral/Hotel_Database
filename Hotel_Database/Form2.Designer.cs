@@ -43,7 +43,7 @@ namespace Hotel_Database
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(227, 75);
+            this.button1.Location = new System.Drawing.Point(183, 75);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 50);
@@ -54,7 +54,7 @@ namespace Hotel_Database
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(407, 75);
+            this.button2.Location = new System.Drawing.Point(183, 145);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 50);
@@ -65,7 +65,7 @@ namespace Hotel_Database
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(227, 155);
+            this.button3.Location = new System.Drawing.Point(13, 218);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(150, 50);
@@ -76,7 +76,7 @@ namespace Hotel_Database
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(407, 155);
+            this.button4.Location = new System.Drawing.Point(355, 145);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(150, 50);
@@ -87,7 +87,7 @@ namespace Hotel_Database
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(601, 75);
+            this.button5.Location = new System.Drawing.Point(355, 3);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(150, 50);
@@ -98,7 +98,7 @@ namespace Hotel_Database
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(601, 155);
+            this.button6.Location = new System.Drawing.Point(355, 75);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(150, 50);
@@ -109,7 +109,7 @@ namespace Hotel_Database
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(13, 155);
+            this.button7.Location = new System.Drawing.Point(13, 145);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(150, 50);
@@ -131,7 +131,7 @@ namespace Hotel_Database
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(407, 236);
+            this.button9.Location = new System.Drawing.Point(183, 3);
             this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(150, 50);
@@ -155,7 +155,7 @@ namespace Hotel_Database
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 313);
+            this.ClientSize = new System.Drawing.Size(518, 299);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);

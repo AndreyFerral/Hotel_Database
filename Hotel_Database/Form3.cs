@@ -198,7 +198,7 @@ namespace Hotel_Database
             if (idNumberTable == 3)
             {
                 // Для того, чтобы не обновлялись значения, если нажатия происходит в одной строке
-                if (e.RowIndex != indexSelectRow)
+                if (e.RowIndex != indexSelectRow && e.RowIndex != -1)
                 {
                     indexSelectRow = e.RowIndex;
 
