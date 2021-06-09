@@ -29,7 +29,6 @@ namespace Hotel_Database
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@ namespace Hotel_Database
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -64,13 +64,6 @@ namespace Hotel_Database
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(178, 240);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(250, 23);
-            this.textBox8.TabIndex = 153;
             // 
             // textBox9
             // 
@@ -187,6 +180,7 @@ namespace Hotel_Database
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox4);
             this.groupBox1.Controls.Add(this.dateTimePicker6);
             this.groupBox1.Controls.Add(this.dateTimePicker5);
             this.groupBox1.Controls.Add(this.comboBox3);
@@ -197,7 +191,6 @@ namespace Hotel_Database
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.textBox9);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox8);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label13);
@@ -214,6 +207,18 @@ namespace Hotel_Database
             this.groupBox1.TabIndex = 154;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Данные бронирования";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "с предоплатой",
+            "без предоплаты"});
+            this.comboBox4.Location = new System.Drawing.Point(178, 240);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(250, 24);
+            this.comboBox4.TabIndex = 157;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // dateTimePicker6
             // 
@@ -403,7 +408,7 @@ namespace Hotel_Database
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
             // 
-            // Form17
+            // advanced_reservation_adding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -413,7 +418,7 @@ namespace Hotel_Database
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form17";
+            this.Name = "advanced_reservation_adding";
             this.Text = "Расширенное добавление бронирования";
             this.Load += new System.EventHandler(this.Form17_Load);
             this.groupBox1.ResumeLayout(false);
@@ -425,8 +430,6 @@ namespace Hotel_Database
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -458,5 +461,6 @@ namespace Hotel_Database
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Button add;
+        private System.Windows.Forms.ComboBox comboBox4;
     }
 }

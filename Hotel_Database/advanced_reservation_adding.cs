@@ -67,7 +67,7 @@ namespace Hotel_Database
                 string scheduledDateArrival = dateTimePicker3.Text + " " + dateTimePicker4.Text;
                 string scheduledDateLeave = dateTimePicker5.Text + " " + dateTimePicker6.Text;
                 string peopleNum = textBox7.Text;
-                string reservationType = textBox8.Text;
+                string reservationType = comboBox4.Text;
                 string reservaionPrice = textBox9.Text;
 
                 // Данные клиента
@@ -158,6 +158,16 @@ namespace Hotel_Database
                                 " 1. Возможно вы пытаетесь добавить пустую строку.", "Внимание!");
             }
 
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox4.Text == "с предоплатой") textBox9.ReadOnly = false;
+            if (comboBox4.Text == "без предоплаты")
+            {
+                textBox9.ReadOnly = true;
+                textBox9.Text = "0,0000";
+            }
         }
     }
 }

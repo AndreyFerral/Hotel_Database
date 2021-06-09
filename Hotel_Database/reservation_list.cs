@@ -67,6 +67,21 @@ namespace Hotel_Database
             this.Close();
         }
 
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != dataGridView1.Rows.Count - 1 && e.RowIndex != -1)
+                if (e.ColumnIndex == 9 || e.ColumnIndex == 8)
+                {
+                    if (dataGridView1[8, e.RowIndex].Value.ToString() == "с предоплатой")
+                        dataGridView1[9, e.RowIndex].ReadOnly = false;
+                    if (dataGridView1[8, e.RowIndex].Value.ToString() == "без предоплаты")
+                    {
+                        dataGridView1[9, e.RowIndex].ReadOnly = true;
+                        dataGridView1[9, e.RowIndex].Value = "0,0000";       
+                    }
+                }
+        }
+
         private void add_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try

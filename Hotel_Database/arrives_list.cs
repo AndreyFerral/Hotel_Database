@@ -88,41 +88,42 @@ namespace Hotel_Database
                 dateLeave = dataGridView1[10, indexSelectRow].Value.ToString();
                 peopleNum = dataGridView1[11, indexSelectRow].Value.ToString();
 
-                // надо фиксить - если запятой не будет, то исключение
-                // удаляем лишние знаки
-                /*
-                pricePerStay = pricePerStay.Substring(0, pricePerStay.LastIndexOf(','));
-                priceForAddServe = priceForAddServe.Substring(0, priceForAddServe.LastIndexOf(','));
-                fine = fine.Substring(0, fine.LastIndexOf(','));
-                */
-
                 myConn.Open();
-                // Остальные поля могут быть нулевыми
-                if (nameStaff.Trim() == "" || idRoom.Trim() == "" ||
-                    nameClient.Trim() == "" || scheduledDateLeave.Trim() == "" ||
-                    dateArrival.Trim() == "" ||  peopleNum.Trim() == "") throw new Exception();
 
-                string procedure = "execute add_arrival @workerName = @p1, @clientName = @p2, @room = @p3, ";
+                string procedure = "execute add_arrival ";
+
+                if (nameStaff != "") procedure = procedure + "@nameStaff = @p1, ";
+                if (nameClient != "") procedure = procedure + "@nameClient = @p2, ";
+                if (idRoom != "") procedure = procedure + "@idRoom = @p3, ";
                 if (idReservation != "") procedure = procedure + "@idReservation = @p4, ";
                 if (pricePerStay != "") procedure = procedure + "@pricePerStay = @p5, ";
                 if (priceForAddServe != "") procedure = procedure + "@priceForAddServe = @p6, ";
                 if (fine != "") procedure = procedure + "@fine = @p7, ";
-                procedure = procedure + "@dateArrival = @p8, @scheduledDateLeave = @p9, ";
+                procedure = procedure + "@dateArrival = @p8, ";
+                if (scheduledDateLeave != "") procedure = procedure + "scheduledDateLeave = @p9, ";
                 if (dateLeave != "") procedure = procedure + "@dateLeave = @p10, ";
                 procedure = procedure + "@peopleNum = @p11";
 
                 // Создать команду для добавления
                 SqlCommand myComm = new SqlCommand(procedure, myConn);
 
+
                 // Создать параметр и передать в него значение текстового поля 
-                myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
-                myComm.Parameters["@p1"].Value = nameStaff;
-
-                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 100);
-                myComm.Parameters["@p2"].Value = nameClient;
-
-                myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
-                myComm.Parameters["@p3"].Value = idRoom;
+                if (nameStaff != "")
+                {
+                    myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p1"].Value = nameStaff;
+                }
+                if (nameClient != "")
+                {
+                    myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p2"].Value = nameClient;
+                }
+                if (idRoom != "")
+                {
+                    myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p3"].Value = idRoom;
+                }
 
                 if (idReservation != "")
                 {
@@ -144,21 +145,27 @@ namespace Hotel_Database
                     myComm.Parameters.Add("@p7", SqlDbType.Money);
                     myComm.Parameters["@p7"].Value = fine;
                 }
-
                 myComm.Parameters.Add("@p8", SqlDbType.SmallDateTime);
                 myComm.Parameters["@p8"].Value = dateArrival;
-
-                myComm.Parameters.Add("@p9", SqlDbType.SmallDateTime);
-                myComm.Parameters["@p9"].Value = scheduledDateLeave;
-
+                if (scheduledDateLeave != "")
+                {
+                    myComm.Parameters.Add("@p9", SqlDbType.SmallDateTime);
+                    myComm.Parameters["@p9"].Value = scheduledDateLeave;
+                }
                 if (dateLeave != "")
                 {
                     myComm.Parameters.Add("@p10", SqlDbType.SmallDateTime);
                     myComm.Parameters["@p10"].Value = dateLeave;
                 }
-
-                myComm.Parameters.Add("@p11", SqlDbType.NVarChar, 100);
-                myComm.Parameters["@p11"].Value = peopleNum;
+                if (peopleNum != "")
+                {
+                    myComm.Parameters.Add("@p11", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p11"].Value = peopleNum;
+                }
+                else {
+                    myComm.Parameters.Add("@p11", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p11"].Value = 1;
+                }
 
                 // Выполнить запрос на изменение без возвращения результата
                 myComm.ExecuteNonQuery();
