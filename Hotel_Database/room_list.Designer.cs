@@ -110,6 +110,7 @@ namespace Hotel_Database
             this.id_room.DataPropertyName = "Номер_комнаты";
             this.id_room.HeaderText = "Номер комнаты";
             this.id_room.Name = "id_room";
+            this.id_room.ReadOnly = true;
             this.id_room.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // comfort_name
@@ -149,7 +150,7 @@ namespace Hotel_Database
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.Width = 104;
             // 
-            // Form13
+            // room_list
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,7 +159,7 @@ namespace Hotel_Database
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form13";
+            this.Name = "room_list";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список номеров";
             this.Load += new System.EventHandler(this.Form13_Load);

@@ -31,6 +31,7 @@ namespace Hotel_Database
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.add_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addBig_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delete_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.update_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.info_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@ namespace Hotel_Database
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addBig_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,13 @@ namespace Hotel_Database
             this.add_ToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.add_ToolStripMenuItem.Text = "Добавление";
             this.add_ToolStripMenuItem.Click += new System.EventHandler(this.add_ToolStripMenuItem_Click);
+            // 
+            // addBig_ToolStripMenuItem
+            // 
+            this.addBig_ToolStripMenuItem.Name = "addBig_ToolStripMenuItem";
+            this.addBig_ToolStripMenuItem.Size = new System.Drawing.Size(174, 20);
+            this.addBig_ToolStripMenuItem.Text = "Добавление (расширенное)";
+            this.addBig_ToolStripMenuItem.Click += new System.EventHandler(this.addBig_ToolStripMenuItem_Click);
             // 
             // delete_ToolStripMenuItem
             // 
@@ -134,6 +141,7 @@ namespace Hotel_Database
             this.id_arrival.DataPropertyName = "id_Заезд";
             this.id_arrival.HeaderText = "Номер заезда";
             this.id_arrival.Name = "id_arrival";
+            this.id_arrival.ReadOnly = true;
             this.id_arrival.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // name_staff
@@ -221,14 +229,7 @@ namespace Hotel_Database
             this.Column6.HeaderText = "Количество человек";
             this.Column6.Name = "Column6";
             // 
-            // addBig_ToolStripMenuItem
-            // 
-            this.addBig_ToolStripMenuItem.Name = "addBig_ToolStripMenuItem";
-            this.addBig_ToolStripMenuItem.Size = new System.Drawing.Size(174, 20);
-            this.addBig_ToolStripMenuItem.Text = "Добавление (расширенное)";
-            this.addBig_ToolStripMenuItem.Click += new System.EventHandler(this.addBig_ToolStripMenuItem_Click);
-            // 
-            // Form11
+            // arrives_list
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -237,7 +238,7 @@ namespace Hotel_Database
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form11";
+            this.Name = "arrives_list";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список заездов";
             this.Load += new System.EventHandler(this.Form11_Load);
@@ -258,6 +259,7 @@ namespace Hotel_Database
         private System.Windows.Forms.ToolStripMenuItem info_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem back_ToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem addBig_ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_arrival;
         private System.Windows.Forms.DataGridViewComboBoxColumn name_staff;
         private System.Windows.Forms.DataGridViewComboBoxColumn id_room;
@@ -270,6 +272,5 @@ namespace Hotel_Database
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.ToolStripMenuItem addBig_ToolStripMenuItem;
     }
 }

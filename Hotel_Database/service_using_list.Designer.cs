@@ -118,6 +118,7 @@ namespace Hotel_Database
             this.name_service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.name_service.HeaderText = "Услуга";
             this.name_service.Name = "name_service";
+            this.name_service.ReadOnly = true;
             this.name_service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.name_service.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -146,9 +147,9 @@ namespace Hotel_Database
             this.count_use.DataPropertyName = "Количество_пользований";
             this.count_use.HeaderText = "Кол-во пользований";
             this.count_use.Name = "count_use";
-            this.count_use.Width = 167;
+            this.count_use.Width = 152;
             // 
-            // Form9
+            // service_using_list
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -157,7 +158,7 @@ namespace Hotel_Database
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form9";
+            this.Name = "service_using_list";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список использования услуг";
             this.Load += new System.EventHandler(this.Form9_Load);
