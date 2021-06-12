@@ -186,7 +186,7 @@ namespace Hotel_Database
         private void back_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
-            main_menu form2 = new main_menu();
+            menu form2 = new menu();
             form2.ShowDialog();
             Close();
         }

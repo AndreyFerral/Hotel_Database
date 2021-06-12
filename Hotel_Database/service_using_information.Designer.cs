@@ -39,12 +39,6 @@ namespace Hotel_Database
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.name_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_use = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count_use = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,11 +52,17 @@ namespace Hotel_Database
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.name_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_use = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count_use = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -72,13 +72,13 @@ namespace Hotel_Database
             this.label4.Location = new System.Drawing.Point(35, 109);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 17);
+            this.label4.Size = new System.Drawing.Size(190, 17);
             this.label4.TabIndex = 81;
-            this.label4.Text = "Кол-во использований";
+            this.label4.Text = "Количество использований";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(195, 106);
+            this.textBox4.Location = new System.Drawing.Point(231, 106);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(250, 23);
@@ -86,7 +86,7 @@ namespace Hotel_Database
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(195, 19);
+            this.textBox1.Location = new System.Drawing.Point(231, 19);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(250, 23);
@@ -94,7 +94,7 @@ namespace Hotel_Database
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(195, 48);
+            this.textBox2.Location = new System.Drawing.Point(231, 48);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(250, 23);
@@ -113,7 +113,7 @@ namespace Hotel_Database
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(195, 77);
+            this.textBox3.Location = new System.Drawing.Point(231, 77);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(250, 23);
@@ -163,6 +163,124 @@ namespace Hotel_Database
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Заезд";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column7,
+            this.Column8,
+            this.Column6});
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(681, 85);
+            this.dataGridView2.TabIndex = 71;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_Заезд";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Номер заезда";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ФИО_Сотрудника";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Сотрудник";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 103;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Номер_комнаты";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Номер комнаты";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ФИО_клиента";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Клиент";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 81;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Бронирование_id_Бронирование";
+            this.Column1.HeaderText = "Номер брони";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Цена_за_проживание";
+            this.Column2.HeaderText = "Цена за проживание";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Цена_за_дополнительные_услуги";
+            this.Column3.HeaderText = "Цена за услуги";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Размер_штрафа";
+            this.Column4.HeaderText = "Размер штрафа";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Запланированная_дата_выезда";
+            this.Column5.HeaderText = "Запланированная дата выезда";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 150;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Дата_заезда";
+            this.Column7.HeaderText = "Дата заезда";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 150;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Дата_выезда";
+            this.Column8.HeaderText = "Дата выезда";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 150;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Количество_человек";
+            this.Column6.HeaderText = "Количество человек";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
@@ -197,6 +315,7 @@ namespace Hotel_Database
             this.name_service.DataPropertyName = "Название";
             this.name_service.HeaderText = "Услуга";
             this.name_service.Name = "name_service";
+            this.name_service.ReadOnly = true;
             this.name_service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // date_use
@@ -205,6 +324,7 @@ namespace Hotel_Database
             this.date_use.DataPropertyName = "Дата_пользования";
             this.date_use.HeaderText = "Дата";
             this.date_use.Name = "date_use";
+            this.date_use.ReadOnly = true;
             this.date_use.Width = 67;
             // 
             // id_arrival
@@ -213,124 +333,20 @@ namespace Hotel_Database
             this.id_arrival.DataPropertyName = "Заезд_id_Заезд";
             this.id_arrival.HeaderText = "Номер заезда";
             this.id_arrival.Name = "id_arrival";
+            this.id_arrival.ReadOnly = true;
             this.id_arrival.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id_arrival.Width = 115;
+            this.id_arrival.Width = 126;
             // 
             // count_use
             // 
             this.count_use.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.count_use.DataPropertyName = "Количество_пользований";
-            this.count_use.HeaderText = "Кол-во пользований";
+            this.count_use.HeaderText = "Количество пользований";
             this.count_use.Name = "count_use";
-            this.count_use.Width = 152;
+            this.count_use.ReadOnly = true;
+            this.count_use.Width = 182;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column7,
-            this.Column8,
-            this.Column6});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(681, 85);
-            this.dataGridView2.TabIndex = 71;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_Заезд";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Номер заезда";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ФИО_Сотрудника";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Сотрудник";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 103;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Номер_комнаты";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Номер комнаты";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ФИО_клиента";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Клиент";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 81;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Бронирование_id_Бронирование";
-            this.Column1.HeaderText = "Номер брони";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Цена_за_проживание";
-            this.Column2.HeaderText = "Цена за проживание";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Цена_за_дополнительные_услуги";
-            this.Column3.HeaderText = "Цена за услуги";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Размер_штрафа";
-            this.Column4.HeaderText = "Размер штрафа";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Запланированная_дата_выезда";
-            this.Column5.HeaderText = "Запланированная дата выезда";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Дата_заезда";
-            this.Column7.HeaderText = "Дата заезда";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 150;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Дата_выезда";
-            this.Column8.HeaderText = "Дата выезда";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 150;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Количество_человек";
-            this.Column6.HeaderText = "Количество человек";
-            this.Column6.Name = "Column6";
-            // 
-            // Form10
+            // service_using_information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -345,16 +361,16 @@ namespace Hotel_Database
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form10";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "service_using_information";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Просмотр информации о использовании услуги";
             this.Load += new System.EventHandler(this.Form10_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,10 +390,6 @@ namespace Hotel_Database
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name_service;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_use;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_arrival;
-        private System.Windows.Forms.DataGridViewTextBoxColumn count_use;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -391,5 +403,9 @@ namespace Hotel_Database
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_service;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_use;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_arrival;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count_use;
     }
 }

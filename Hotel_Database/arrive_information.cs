@@ -12,6 +12,7 @@ namespace Hotel_Database
              pricePerStay, priceForAddServe, fine, scheduledDateLeave,
              dateArrival, dateLeave, peopleNum;
 
+
         public arrive_information(string idАrrival, string nameStaff, string idRoom, string nameClient, string idReservation,
              string pricePerStay, string priceForAddServe, string fine, string scheduledDateLeave,
              string dateArrival, string dateLeave, string peopleNum)

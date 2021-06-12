@@ -47,7 +47,7 @@ namespace Hotel_Database
                     
                     // Переходим на следующую форму
                     Hide();
-                    main_menu form2 = new main_menu();
+                    menu form2 = new menu();
                     form2.ShowDialog();
                     Close();
                     

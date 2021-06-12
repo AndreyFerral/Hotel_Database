@@ -109,7 +109,7 @@ namespace Hotel_Database
             this.count_children});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(734, 437);
             this.dataGridView1.TabIndex = 28;
@@ -160,10 +160,10 @@ namespace Hotel_Database
             // 
             this.count_children.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.count_children.DataPropertyName = "Количество_детей";
-            this.count_children.HeaderText = "Кол-во детей";
+            this.count_children.HeaderText = "Количество детей";
             this.count_children.Name = "count_children";
             // 
-            // Form6
+            // client_list
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,8 +171,8 @@ namespace Hotel_Database
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form6";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "client_list";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список клиентов";
             this.Load += new System.EventHandler(this.Form6_Load);

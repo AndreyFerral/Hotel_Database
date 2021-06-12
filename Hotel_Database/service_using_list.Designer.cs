@@ -145,9 +145,9 @@ namespace Hotel_Database
             // 
             this.count_use.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.count_use.DataPropertyName = "Количество_пользований";
-            this.count_use.HeaderText = "Кол-во пользований";
+            this.count_use.HeaderText = "Количество пользований";
             this.count_use.Name = "count_use";
-            this.count_use.Width = 152;
+            this.count_use.Width = 182;
             // 
             // service_using_list
             // 

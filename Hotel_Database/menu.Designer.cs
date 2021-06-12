@@ -1,7 +1,7 @@
 ﻿
 namespace Hotel_Database
 {
-    partial class main_menu
+    partial class menu
     {
         /// <summary>
         /// Required designer variable.
@@ -151,7 +151,7 @@ namespace Hotel_Database
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // Form2
+            // main_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -168,9 +168,9 @@ namespace Hotel_Database
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form2";
+            this.Name = "main_menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Выбор списка для работы";
+            this.Text = "Меню";
             this.ResumeLayout(false);
 
         }

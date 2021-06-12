@@ -152,7 +152,7 @@ namespace Hotel_Database
             this.lblNameSrv.TabIndex = 11;
             this.lblNameSrv.Text = "Имя сервера";
             // 
-            // Form1
+            // connection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,9 +170,9 @@ namespace Hotel_Database
             this.Controls.Add(this.lblNameSrv);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "connection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Введите параметры подключения";
+            this.Text = "Подключение к базе данных";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

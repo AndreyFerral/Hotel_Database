@@ -94,7 +94,7 @@ namespace Hotel_Database
 
                 if (nameStaff != "") procedure = procedure + "@nameStaff = @p1, ";
                 if (nameClient != "") procedure = procedure + "@nameClient = @p2, ";
-                if (idRoom != "") procedure = procedure + "@idRoom = @p3, ";
+                if (idRoom != "") procedure = procedure + "@room = @p3, ";
                 if (idReservation != "") procedure = procedure + "@idReservation = @p4, ";
                 if (pricePerStay != "") procedure = procedure + "@pricePerStay = @p5, ";
                 if (priceForAddServe != "") procedure = procedure + "@priceForAddServe = @p6, ";
@@ -336,7 +336,7 @@ namespace Hotel_Database
         private void back_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
-            main_menu form2 = new main_menu();
+            menu form2 = new menu();
             form2.ShowDialog();
             Close();
         }

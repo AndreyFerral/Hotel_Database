@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace Hotel_Database
 {
-    public partial class main_menu : Form
+    public partial class menu : Form
     {
-        public main_menu()
+        public menu()
         {
             InitializeComponent();
         }

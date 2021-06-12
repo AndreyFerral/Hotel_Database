@@ -189,11 +189,11 @@ namespace Hotel_Database
             // 
             this.count_children.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.count_children.DataPropertyName = "Количество_детей";
-            this.count_children.HeaderText = "Кол-во детей";
+            this.count_children.HeaderText = "Количество детей";
             this.count_children.Name = "count_children";
             this.count_children.ReadOnly = true;
             // 
-            // Form5
+            // child_information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -209,8 +209,8 @@ namespace Hotel_Database
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form5";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "child_information";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Просмотр информации о ребенке клиента";
             this.Load += new System.EventHandler(this.Form5_Load);

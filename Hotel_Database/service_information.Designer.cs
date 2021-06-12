@@ -169,10 +169,10 @@ namespace Hotel_Database
             // 
             this.count_use.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.count_use.DataPropertyName = "Количество_пользований";
-            this.count_use.HeaderText = "Кол-во пользований";
+            this.count_use.HeaderText = "Количество пользований";
             this.count_use.Name = "count_use";
             // 
-            // Form8
+            // service_information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +189,7 @@ namespace Hotel_Database
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form8";
+            this.Name = "service_information";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Просмотр информации о услуге";
             this.Load += new System.EventHandler(this.Form8_Load);

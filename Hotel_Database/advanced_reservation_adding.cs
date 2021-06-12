@@ -130,7 +130,7 @@ namespace Hotel_Database
                 }
 
                 if (reservaionPrice != "") {
-                    myComm.Parameters.Add("@p9", SqlDbType.NVarChar, 100);
+                    myComm.Parameters.Add("@p9", SqlDbType.Money, 100);
                     myComm.Parameters["@p9"].Value = reservaionPrice;
                 }
 
@@ -168,6 +168,11 @@ namespace Hotel_Database
                 textBox9.ReadOnly = true;
                 textBox9.Text = "0,0000";
             }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

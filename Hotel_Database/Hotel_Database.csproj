@@ -100,11 +100,11 @@
     <Compile Include="advanced_reservation_adding.Designer.cs">
       <DependentUpon>advanced_reservation_adding.cs</DependentUpon>
     </Compile>
-    <Compile Include="main_menu.cs">
+    <Compile Include="menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main_menu.Designer.cs">
-      <DependentUpon>main_menu.cs</DependentUpon>
+    <Compile Include="menu.Designer.cs">
+      <DependentUpon>menu.cs</DependentUpon>
     </Compile>
     <Compile Include="universal.cs">
       <SubType>Form</SubType>
@@ -177,8 +177,8 @@
     <EmbeddedResource Include="advanced_reservation_adding.resx">
       <DependentUpon>advanced_reservation_adding.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main_menu.resx">
-      <DependentUpon>main_menu.cs</DependentUpon>
+    <EmbeddedResource Include="menu.resx">
+      <DependentUpon>menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="universal.resx">
       <DependentUpon>universal.cs</DependentUpon>

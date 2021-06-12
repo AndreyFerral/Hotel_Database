@@ -65,8 +65,8 @@ namespace Hotel_Database
             // Добавляем пустое значение в ComboBox
             dtbl.Rows.Add();
 
-            comboBox4.DisplayMember = "id_Бронирование";
-            comboBox4.DataSource = dtbl;
+            //comboBox4.DisplayMember = "id_Бронирование";
+           // comboBox4.DataSource = dtbl;
         }
 
         private void add_Click(object sender, EventArgs e)
@@ -77,13 +77,13 @@ namespace Hotel_Database
                 string nameStaff = comboBox1.Text;
                 string idRoom = comboBox2.Text;
                 string nameClient = comboBox3.Text;
-                string idReservation = comboBox4.Text;
+               //string idReservation = comboBox4.Text;
                 string pricePerStay = textBox5.Text;
                 string priceForAddServe = textBox6.Text;
                 string fine = textBox7.Text;
                 string scheduledDateLeave = dateTimePicker1.Text + " " + dateTimePicker2.Text;
                 string dateArrival = dateTimePicker3.Text + " " + dateTimePicker4.Text;
-                string dateLeave = dateTimePicker5.Text + " " + dateTimePicker6.Text;
+               // string dateLeave = dateTimePicker5.Text + " " + dateTimePicker6.Text;
                 string peopleNum = textBox11.Text;
 
                 // Данные клиента
@@ -107,7 +107,7 @@ namespace Hotel_Database
                     dateArrival.Trim() == "" || peopleNum.Trim() == "") throw new Exception();
 
                 string procedure = "execute add_arrival @workerName = @p1, @clientName = @p2, @room = @p3, ";
-                if (idReservation != "") procedure = procedure + "@idReservation = @p4, ";
+               // if (idReservation != "") procedure = procedure + "@idReservation = @p4, ";
                 if (pricePerStay != "") procedure = procedure + "@pricePerStay = @p5, ";
                 if (priceForAddServe != "") procedure = procedure + "@priceForAddServe = @p6, ";
                 if (fine != "") procedure = procedure + "@fine = @p7, ";
@@ -129,23 +129,23 @@ namespace Hotel_Database
                 myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p3"].Value = idRoom;
 
-                if (idReservation != "") {
-                    myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
-                    myComm.Parameters["@p4"].Value = idReservation;
-                }
+                //if (idReservation != "") {
+                //    myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
+                //    myComm.Parameters["@p4"].Value = idReservation;
+               // }
 
                 if (pricePerStay != "") {
-                    myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
+                    myComm.Parameters.Add("@p5", SqlDbType.Money, 100);
                     myComm.Parameters["@p5"].Value = pricePerStay;
                 }
 
                 if (priceForAddServe != "") {
-                    myComm.Parameters.Add("@p6", SqlDbType.NVarChar, 100);
+                    myComm.Parameters.Add("@p6", SqlDbType.Money, 100);
                     myComm.Parameters["@p6"].Value = priceForAddServe;
                 }
 
                 if (fine != "") {
-                    myComm.Parameters.Add("@p7", SqlDbType.NVarChar, 100);
+                    myComm.Parameters.Add("@p7", SqlDbType.Money, 100);
                     myComm.Parameters["@p7"].Value = fine;
                 }
 
@@ -188,6 +188,11 @@ namespace Hotel_Database
                 MessageBox.Show("Ошибка. Возможное решение:\n\n " +
                                 " 1. Возможно вы пытаетесь добавить пустую строку.", "Внимание!");
             }
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
 
         }
     }

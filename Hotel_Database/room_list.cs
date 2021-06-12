@@ -73,7 +73,7 @@ namespace Hotel_Database
                 myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 40);
                 myComm.Parameters["@p2"].Value = placementName;
 
-                myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p3", SqlDbType.Money, 100);
                 myComm.Parameters["@p3"].Value = price;
 
                 myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 25);
@@ -155,7 +155,7 @@ namespace Hotel_Database
                 myComm.Parameters.Add("@p3", SqlDbType.NVarChar, 100);
                 myComm.Parameters["@p3"].Value = placementName;
 
-                myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 100);
+                myComm.Parameters.Add("@p4", SqlDbType.Money, 100);
                 myComm.Parameters["@p4"].Value = price;
 
                 myComm.Parameters.Add("@p5", SqlDbType.NVarChar, 100);
@@ -184,7 +184,7 @@ namespace Hotel_Database
         private void back_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
-            main_menu form2 = new main_menu();
+            menu form2 = new menu();
             form2.ShowDialog();
             Close();
         }
