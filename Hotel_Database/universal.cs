@@ -26,6 +26,7 @@ namespace Hotel_Database
             this.idNumberTable = idNumberTable;
         }
 
+
         private void Form3_Load(object sender, EventArgs e)
         {
             // Получаем строку подключения из параметров
@@ -190,7 +191,6 @@ namespace Hotel_Database
                     }
                     break;
             }
-
             dataGridView1.Refresh();
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -243,6 +243,15 @@ namespace Hotel_Database
             catch { MessageBox.Show("Почему-то вызвалось исключение.", "Внимание!"); }
         }
 
+        private void reloadTable(string tableName) {
+
+            sda.Update(ds.Tables[tableName]);
+            // очищаем таблицу
+            while (dataGridView1.Rows.Count > 0)
+                dataGridView1.Rows.Remove(dataGridView1.Rows[0]);
+            sda.Fill(ds, tableName);
+        }
+
         private void save_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -250,21 +259,20 @@ namespace Hotel_Database
                 // Создаем команды манипулирования данными
                 SqlCommandBuilder scb = new SqlCommandBuilder(sda);
                 scb.GetUpdateCommand(); scb.GetDeleteCommand(); scb.GetInsertCommand();
-
                 // Отправляем изменения в БД
                 switch (idNumberTable)
                 {
                     case 1:
-                        sda.Update(ds.Tables["Размещение"]);
+                        reloadTable("Размещение");
                         break;
                     case 2:
-                        sda.Update(ds.Tables["Комфортность"]);
+                        reloadTable("Комфортность");
                         break;
                     case 3:
-                        sda.Update(ds.Tables["Услуга"]);
+                        reloadTable("Услуга");
                         break;
                     case 4:
-                        sda.Update(ds.Tables["Сотрудник"]);
+                        reloadTable("Сотрудник");
                         break;
                 }
 

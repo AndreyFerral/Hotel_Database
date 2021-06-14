@@ -39,7 +39,7 @@ namespace Hotel_Database
             this.comfort_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.placement_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -146,8 +146,14 @@ namespace Hotel_Database
             // 
             this.dataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn19.DataPropertyName = "Состояние_номера";
+            this.dataGridViewTextBoxColumn19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dataGridViewTextBoxColumn19.HeaderText = "Состояние";
+            this.dataGridViewTextBoxColumn19.Items.AddRange(new object[] {
+            "готов к эксплуатации",
+            "не готов к эксплуатации"});
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn19.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn19.Width = 104;
             // 
             // room_list
@@ -183,6 +189,6 @@ namespace Hotel_Database
         private System.Windows.Forms.DataGridViewComboBoxColumn comfort_name;
         private System.Windows.Forms.DataGridViewComboBoxColumn placement_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn19;
     }
 }

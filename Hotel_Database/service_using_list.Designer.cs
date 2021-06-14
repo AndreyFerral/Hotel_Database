@@ -118,7 +118,6 @@ namespace Hotel_Database
             this.name_service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.name_service.HeaderText = "Услуга";
             this.name_service.Name = "name_service";
-            this.name_service.ReadOnly = true;
             this.name_service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.name_service.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
