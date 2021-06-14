@@ -40,11 +40,12 @@ namespace Hotel_Database
 
         private void roomComboBox()
         {
-            SqlDataAdapter sqlDa = new SqlDataAdapter("select Номер_комнаты from Номер", myConn);
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select [номер_комнаты], [info] from get_available_rooms() order by 1", myConn);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
-            comboBox2.DisplayMember = "Номер_комнаты";
-            comboBox2.DataSource = dtbl;
+            comboBox2.DataSource = dtbl; // Источник
+            comboBox2.ValueMember = "Номер_комнаты"; // Реальное значение
+            comboBox2.DisplayMember = "info"; // Отображаемое значение
         }
 
         private void clientComboBox()
@@ -75,7 +76,7 @@ namespace Hotel_Database
             {
                 // Данные заезда
                 string nameStaff = comboBox1.Text;
-                string idRoom = comboBox2.Text;
+                string idRoom = comboBox2.Text.Split()[0];
                 string nameClient = comboBox3.Text;
                //string idReservation = comboBox4.Text;
                 string pricePerStay = textBox5.Text;
@@ -92,13 +93,6 @@ namespace Hotel_Database
                 string numberClient = textBox14.Text;
                 string countChildren = textBox15.Text;
 
-                // надо фиксить - если запятой не будет, то исключение
-                // удаляем лишние знаки
-                /*
-                pricePerStay = pricePerStay.Substring(0, pricePerStay.LastIndexOf(','));
-                priceForAddServe = priceForAddServe.Substring(0, priceForAddServe.LastIndexOf(','));
-                fine = fine.Substring(0, fine.LastIndexOf(','));
-                */
 
                 myConn.Open();
                 // Остальные поля могут быть нулевыми
@@ -192,6 +186,11 @@ namespace Hotel_Database
         }
 
         private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

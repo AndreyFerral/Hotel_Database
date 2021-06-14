@@ -338,11 +338,12 @@ namespace Hotel_Database
         {
             myConn.Open();
 
-            SqlDataAdapter sqlDa = new SqlDataAdapter("select Номер_комнаты from Номер", myConn);
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select [номер_комнаты], [info] from get_rooms_with_placement() order by 1", myConn);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
-            number_room.DisplayMember = "Номер_комнаты";
-            number_room.DataSource = dtbl;
+            number_room.DataSource = dtbl; // Источник
+            number_room.ValueMember = "Номер_комнаты"; // Реальное значение
+            number_room.DisplayMember = "info"; // Отображаемое значение
 
             myConn.Close();
         }

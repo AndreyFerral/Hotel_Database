@@ -160,9 +160,11 @@ namespace Hotel_Database
             this.id_room.DataPropertyName = "Номер_комнаты";
             this.id_room.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.id_room.HeaderText = "Номер комнаты";
+            this.id_room.MinimumWidth = 200;
             this.id_room.Name = "id_room";
             this.id_room.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.id_room.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id_room.Width = 200;
             // 
             // name_client
             // 

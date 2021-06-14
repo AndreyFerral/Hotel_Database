@@ -150,7 +150,7 @@ namespace Hotel_Database
             this.number_room.Name = "number_room";
             this.number_room.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.number_room.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.number_room.Width = 76;
+            this.number_room.Width = 200;
             // 
             // worker_name
             // 

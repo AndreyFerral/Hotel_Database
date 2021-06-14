@@ -267,6 +267,7 @@ namespace Hotel_Database
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(250, 24);
             this.comboBox3.TabIndex = 138;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // comboBox2
             // 

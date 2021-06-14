@@ -92,18 +92,17 @@ namespace Hotel_Database
 
                 string procedure = "execute add_arrival ";
 
-                if (nameStaff != "") procedure = procedure + "@nameStaff = @p1, ";
-                if (nameClient != "") procedure = procedure + "@nameClient = @p2, ";
+                if (nameStaff != "") procedure = procedure + "@workerName = @p1, ";
+                if (nameClient != "") procedure = procedure + "@clientName = @p2, ";
                 if (idRoom != "") procedure = procedure + "@room = @p3, ";
                 if (idReservation != "") procedure = procedure + "@idReservation = @p4, ";
                 if (pricePerStay != "") procedure = procedure + "@pricePerStay = @p5, ";
                 if (priceForAddServe != "") procedure = procedure + "@priceForAddServe = @p6, ";
                 if (fine != "") procedure = procedure + "@fine = @p7, ";
                 procedure = procedure + "@dateArrival = @p8, ";
-                if (scheduledDateLeave != "") procedure = procedure + "scheduledDateLeave = @p9, ";
+                if (scheduledDateLeave != "") procedure = procedure + "@scheduledDateLeave = @p9, ";
                 if (dateLeave != "") procedure = procedure + "@dateLeave = @p10, ";
                 procedure = procedure + "@peopleNum = @p11";
-
                 // Создать команду для добавления
                 SqlCommand myComm = new SqlCommand(procedure, myConn);
 
@@ -164,9 +163,8 @@ namespace Hotel_Database
                 }
                 else {
                     myComm.Parameters.Add("@p11", SqlDbType.NVarChar, 100);
-                    myComm.Parameters["@p11"].Value = 1;
+                    myComm.Parameters["@p11"].Value = peopleNum;
                 }
-
                 // Выполнить запрос на изменение без возвращения результата
                 myComm.ExecuteNonQuery();
                 myConn.Close();
@@ -202,7 +200,7 @@ namespace Hotel_Database
                     // Выполнить запрос на удаление без возвращения результата
                     myComm.ExecuteReader();
                     myConn.Close();
-
+                    idRoomComboBox();
                     // Обновляем содержимое 
                     loadData();
                 }
@@ -302,7 +300,7 @@ namespace Hotel_Database
                 // Выполнить запрос на изменение без возвращения результата
                 myComm.ExecuteNonQuery();
                 myConn.Close();
-
+                idRoomComboBox();
                 // Обновляем содержимое 
                 loadData();
             }
@@ -358,11 +356,12 @@ namespace Hotel_Database
         {
             myConn.Open();
 
-            SqlDataAdapter sqlDa = new SqlDataAdapter("select Номер_комнаты from Номер", myConn);
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select [номер_комнаты], [info] from get_rooms_with_placement() order by 1", myConn);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
-            id_room.DisplayMember = "Номер_комнаты";
-            id_room.DataSource = dtbl;
+            id_room.DataSource = dtbl; // Источник
+            id_room.ValueMember = "Номер_комнаты"; // Реальное значение
+            id_room.DisplayMember = "info"; // Отображаемое значение
 
             myConn.Close();
         }

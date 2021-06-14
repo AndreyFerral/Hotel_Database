@@ -39,11 +39,12 @@ namespace Hotel_Database
 
         private void roomComboBox()
         {
-            SqlDataAdapter sqlDa = new SqlDataAdapter("select Номер_комнаты from Номер", myConn);
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select [номер_комнаты], [info] from get_available_rooms()", myConn);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
-            comboBox1.DisplayMember = "Номер_комнаты";
-            comboBox1.DataSource = dtbl;
+            comboBox1.DataSource = dtbl; // Источник
+            comboBox1.ValueMember = "Номер_комнаты"; // Реальное значение
+            comboBox1.DisplayMember = "info"; // Отображаемое значение
         }
 
         private void clientComboBox()
@@ -60,7 +61,7 @@ namespace Hotel_Database
             try
             {
                 // Данные бронирования
-                string roomNumber = comboBox1.Text;
+                string roomNumber = comboBox1.Text.Split()[0];
                 string workerName = comboBox2.Text;
                 string clientName = comboBox3.Text;
                 string dateReservation = dateTimePicker1.Text + " " + dateTimePicker2.Text;
