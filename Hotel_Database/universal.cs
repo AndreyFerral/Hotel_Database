@@ -35,162 +35,165 @@ namespace Hotel_Database
             // Создаем подключение 
             myConn.ConnectionString = StrConn;
             myConn.Open();
-
-            switch (idNumberTable)
+            try
             {
-                case 1:
-                    {
-                        // Устанавливаем заголовок формы
-                        this.Text = "Список размещений";
+                switch (idNumberTable)
+                {
+                    case 1:
+                        {
+                            // Устанавливаем заголовок формы
+                            this.Text = "Список размещений";
 
-                        info_ToolStripMenuItem.Visible = false;
+                            info_ToolStripMenuItem.Visible = false;
 
-                        // Настраиваем стобец "Номер размещения"
-                        id.HeaderText = "Номер размещения";
-                        id.DataPropertyName = "id_Размещение";
+                            // Настраиваем стобец "Номер размещения"
+                            id.HeaderText = "Номер размещения";
+                            id.DataPropertyName = "id_Размещение";
 
-                        // Настраиваем стобец "Название"
-                        name.HeaderText = "Название";
-                        name.DataPropertyName = "Название";
+                            // Настраиваем стобец "Название"
+                            name.HeaderText = "Название";
+                            name.DataPropertyName = "Название";
 
-                        // Избавляемся от ненужных столбцов
-                        dataGridView1.Columns.Remove(passport);
-                        dataGridView1.Columns.Remove(date);
-                        dataGridView1.Columns.Remove(address);
-                        dataGridView1.Columns.Remove(number);
-                        dataGridView1.Columns.Remove(post);
-                        dataGridView1.Columns.Remove(cost);
+                            // Избавляемся от ненужных столбцов
+                            dataGridView1.Columns.Remove(passport);
+                            dataGridView1.Columns.Remove(date);
+                            dataGridView1.Columns.Remove(address);
+                            dataGridView1.Columns.Remove(number);
+                            dataGridView1.Columns.Remove(post);
+                            dataGridView1.Columns.Remove(cost);
 
-                        // Выборка создания и заполнения в DataSet таблицы
-                        myCommPlacement.Connection = myConn;
-                        sda.SelectCommand = myCommPlacement;
+                            // Выборка создания и заполнения в DataSet таблицы
+                            myCommPlacement.Connection = myConn;
+                            sda.SelectCommand = myCommPlacement;
 
-                        sda.Fill(ds, "Размещение");
-                        dataGridView1.DataSource = ds.Tables["Размещение"];
-                    }
-                    break;
-                case 2:
-                    {
-                        // Устанавливаем заголовок формы
-                        this.Text = "Список комфортностей";
+                            sda.Fill(ds, "Размещение");
+                            dataGridView1.DataSource = ds.Tables["Размещение"];
+                        }
+                        break;
+                    case 2:
+                        {
+                            // Устанавливаем заголовок формы
+                            this.Text = "Список комфортностей";
 
-                        info_ToolStripMenuItem.Visible = false;
+                            info_ToolStripMenuItem.Visible = false;
 
-                        // Настраиваем стобец "Номер комфортности"
-                        id.HeaderText = "Номер комфортности";
-                        id.DataPropertyName = "id_Комфортность";
+                            // Настраиваем стобец "Номер комфортности"
+                            id.HeaderText = "Номер комфортности";
+                            id.DataPropertyName = "id_Комфортность";
 
-                        // Настраиваем стобец "Название"
-                        name.HeaderText = "Название";
-                        name.DataPropertyName = "Название";
+                            // Настраиваем стобец "Название"
+                            name.HeaderText = "Название";
+                            name.DataPropertyName = "Название";
 
-                        // Избавляемся от ненужных столбцов
-                        dataGridView1.Columns.Remove(passport);
-                        dataGridView1.Columns.Remove(date);
-                        dataGridView1.Columns.Remove(address);
-                        dataGridView1.Columns.Remove(number);
-                        dataGridView1.Columns.Remove(post);
-                        dataGridView1.Columns.Remove(cost);
+                            // Избавляемся от ненужных столбцов
+                            dataGridView1.Columns.Remove(passport);
+                            dataGridView1.Columns.Remove(date);
+                            dataGridView1.Columns.Remove(address);
+                            dataGridView1.Columns.Remove(number);
+                            dataGridView1.Columns.Remove(post);
+                            dataGridView1.Columns.Remove(cost);
 
-                        // Выборка создания и заполнения в DataSet таблицы
-                        myCommComfort.Connection = myConn;
-                        sda.SelectCommand = myCommComfort;
+                            // Выборка создания и заполнения в DataSet таблицы
+                            myCommComfort.Connection = myConn;
+                            sda.SelectCommand = myCommComfort;
 
-                        sda.Fill(ds, "Комфортность");
-                        dataGridView1.DataSource = ds.Tables["Комфортность"];
-                    }
-                    break;
-                case 3:
-                    {
-                        // Устанавливаем заголовок формы
-                        this.Text = "Список дополнительных услуг";
+                            sda.Fill(ds, "Комфортность");
+                            dataGridView1.DataSource = ds.Tables["Комфортность"];
+                        }
+                        break;
+                    case 3:
+                        {
+                            // Устанавливаем заголовок формы
+                            this.Text = "Список дополнительных услуг";
 
-                        // Настраиваем стобец "Номер услуги"
-                        id.HeaderText = "Номер услуги";
-                        id.DataPropertyName = "id_Дополнительные_услуги";
+                            // Настраиваем стобец "Номер услуги"
+                            id.HeaderText = "Номер услуги";
+                            id.DataPropertyName = "id_Дополнительные_услуги";
 
-                        // Настраиваем стобец "Название"
-                        name.HeaderText = "Название";
-                        name.DataPropertyName = "Название";
+                            // Настраиваем стобец "Название"
+                            name.HeaderText = "Название";
+                            name.DataPropertyName = "Название";
 
-                        // Настраиваем столбец "Цена"
-                        cost.HeaderText = "Цена";
-                        cost.DataPropertyName = "Цена";
+                            // Настраиваем столбец "Цена"
+                            cost.HeaderText = "Цена";
+                            cost.DataPropertyName = "Цена";
 
-                        // Избавляемся от ненужных столбцов
-                        dataGridView1.Columns.Remove(passport);
-                        dataGridView1.Columns.Remove(date);
-                        dataGridView1.Columns.Remove(address);
-                        dataGridView1.Columns.Remove(number);
-                        dataGridView1.Columns.Remove(post);
+                            // Избавляемся от ненужных столбцов
+                            dataGridView1.Columns.Remove(passport);
+                            dataGridView1.Columns.Remove(date);
+                            dataGridView1.Columns.Remove(address);
+                            dataGridView1.Columns.Remove(number);
+                            dataGridView1.Columns.Remove(post);
 
-                        // Выборка создания и заполнения в DataSet таблицы
-                        myCommService.Connection = myConn;
-                        sda.SelectCommand = myCommService;
+                            // Выборка создания и заполнения в DataSet таблицы
+                            myCommService.Connection = myConn;
+                            sda.SelectCommand = myCommService;
 
-                        sda.Fill(ds, "Услуга");
-                        dataGridView1.DataSource = ds.Tables["Услуга"];
+                            sda.Fill(ds, "Услуга");
+                            dataGridView1.DataSource = ds.Tables["Услуга"];
 
-                        // Если пользователь нажмет просмотр информации без выбора записи
-                        idService = dataGridView1[0, indexSelectRow].Value.ToString();
-                        nameService = dataGridView1[1, indexSelectRow].Value.ToString();
-                        costService = dataGridView1[2, indexSelectRow].Value.ToString();
-                    }
-                    break;
-                case 4:
-                    {
-                        // Устанавливаем заголовок формы
-                        this.Text = "Список сотрудников";
+                            // Если пользователь нажмет просмотр информации без выбора записи
+                            idService = dataGridView1[0, indexSelectRow].Value.ToString();
+                            nameService = dataGridView1[1, indexSelectRow].Value.ToString();
+                            costService = dataGridView1[2, indexSelectRow].Value.ToString();
+                        }
+                        break;
+                    case 4:
+                        {
+                            // Устанавливаем заголовок формы
+                            this.Text = "Список сотрудников";
 
-                        info_ToolStripMenuItem.Visible = false;
+                            info_ToolStripMenuItem.Visible = false;
 
-                        // Устанавливаем размер формы
-                        this.Width = 1000;
-                        this.Height = 500;
+                            // Устанавливаем размер формы
+                            this.Width = 1000;
+                            this.Height = 500;
 
-                        // Перемещаем форму в центр
-                        this.CenterToScreen();
+                            // Перемещаем форму в центр
+                            this.CenterToScreen();
 
-                        // Настраиваем стобец "Номер сотрудника"
-                        id.HeaderText = "Номер сотрудника";
-                        id.DataPropertyName = "id_Сотрудники";
+                            // Настраиваем стобец "Номер сотрудника"
+                            id.HeaderText = "Номер сотрудника";
+                            id.DataPropertyName = "id_Сотрудники";
 
-                        // Настраиваем стобец "ФИО"
-                        name.HeaderText = "ФИО";
-                        name.DataPropertyName = "ФИО_Сотрудника";
+                            // Настраиваем стобец "ФИО"
+                            name.HeaderText = "ФИО";
+                            name.DataPropertyName = "ФИО_Сотрудника";
 
-                        // Настраиваем столбец "Паспорт"
-                        passport.DataPropertyName = "Номер_и_серия_паспорта";
-                        passport.HeaderText = "Паспорт";
+                            // Настраиваем столбец "Паспорт"
+                            passport.DataPropertyName = "Номер_и_серия_паспорта";
+                            passport.HeaderText = "Паспорт";
 
-                        // Настраиваем столбец "Дата рождения"
-                        date.HeaderText = "Дата рождения";
-                        date.DataPropertyName = "Дата_рождения";
+                            // Настраиваем столбец "Дата рождения"
+                            date.HeaderText = "Дата рождения";
+                            date.DataPropertyName = "Дата_рождения";
 
-                        // Настраиваем столбец "Адрес проживания"
-                        address.HeaderText = "Адрес проживания";
-                        address.DataPropertyName = "Адрес_проживания";
+                            // Настраиваем столбец "Адрес проживания"
+                            address.HeaderText = "Адрес проживания";
+                            address.DataPropertyName = "Адрес_проживания";
 
-                        // Настраиваем столбец "Номер телефона"
-                        number.HeaderText = "Номер телефона";
-                        number.DataPropertyName = "Номер_телефона";
+                            // Настраиваем столбец "Номер телефона"
+                            number.HeaderText = "Номер телефона";
+                            number.DataPropertyName = "Номер_телефона";
 
-                        // Настраиваем столбец "Должность"
-                        post.HeaderText = "Должность";
-                        post.DataPropertyName = "Должность";
+                            // Настраиваем столбец "Должность"
+                            post.HeaderText = "Должность";
+                            post.DataPropertyName = "Должность";
 
-                        // Избавляемся от ненужных столбцов
-                        dataGridView1.Columns.Remove(cost);
+                            // Избавляемся от ненужных столбцов
+                            dataGridView1.Columns.Remove(cost);
 
-                        // Выборка создания и заполнения в DataSet таблицы
-                        myCommStaff.Connection = myConn;
-                        sda.SelectCommand = myCommStaff;
+                            // Выборка создания и заполнения в DataSet таблицы
+                            myCommStaff.Connection = myConn;
+                            sda.SelectCommand = myCommStaff;
 
-                        sda.Fill(ds, "Сотрудник");
-                        dataGridView1.DataSource = ds.Tables["Сотрудник"];
-                    }
-                    break;
+                            sda.Fill(ds, "Сотрудник");
+                            dataGridView1.DataSource = ds.Tables["Сотрудник"];
+                        }
+                        break;
+                }
             }
+            catch { }
             dataGridView1.Refresh();
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -246,9 +249,8 @@ namespace Hotel_Database
         private void reloadTable(string tableName) {
 
             sda.Update(ds.Tables[tableName]);
-            // очищаем таблицу
-            while (dataGridView1.Rows.Count > 0)
-                dataGridView1.Rows.Remove(dataGridView1.Rows[0]);
+            // очищаем
+            ds.Clear();
             sda.Fill(ds, tableName);
         }
 
@@ -302,7 +304,5 @@ namespace Hotel_Database
             form2.ShowDialog();
             Close();
         }
-
-
     }
 }
