@@ -58,33 +58,35 @@ namespace Hotel_Database
                 placementName = dataGridView1[2, indexSelectRow].Value.ToString();
                 price = dataGridView1[3, indexSelectRow].Value.ToString();
                 state = dataGridView1[4, indexSelectRow].Value.ToString();
+                if (idRoom.Trim() == "")
+                {
+                    myConn.Open();
+                    if (comfortName.Trim() == "" || placementName.Trim() == "" ||
+                        price.Trim() == "") throw new Exception();
 
-                myConn.Open();
-                if (comfortName.Trim() == "" || placementName.Trim() == "" ||
-                    price.Trim() == "" || state.Trim() == "") throw new Exception();
+                    // Создать команду для добавления
+                    SqlCommand myComm = new SqlCommand("execute add_room @p1, @p2, @p3, @p4", myConn);
 
-                // Создать команду для добавления
-                SqlCommand myComm = new SqlCommand("execute add_room @p1, @p2, @p3, @p4", myConn);
+                    // Создать параметр и передать в него значение текстового поля 
+                    myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 40);
+                    myComm.Parameters["@p1"].Value = comfortName;
 
-                // Создать параметр и передать в него значение текстового поля 
-                myComm.Parameters.Add("@p1", SqlDbType.NVarChar, 40);
-                myComm.Parameters["@p1"].Value = comfortName;
+                    myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 40);
+                    myComm.Parameters["@p2"].Value = placementName;
 
-                myComm.Parameters.Add("@p2", SqlDbType.NVarChar, 40);
-                myComm.Parameters["@p2"].Value = placementName;
+                    myComm.Parameters.Add("@p3", SqlDbType.Money, 100);
+                    myComm.Parameters["@p3"].Value = price;
 
-                myComm.Parameters.Add("@p3", SqlDbType.Money, 100);
-                myComm.Parameters["@p3"].Value = price;
+                    myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 25);
+                    myComm.Parameters["@p4"].Value = state;
 
-                myComm.Parameters.Add("@p4", SqlDbType.NVarChar, 25);
-                myComm.Parameters["@p4"].Value = state;
+                    // Выполнить запрос на изменение без возвращения результата
+                    myComm.ExecuteNonQuery();
+                    myConn.Close();
 
-                // Выполнить запрос на изменение без возвращения результата
-                myComm.ExecuteNonQuery();
-                myConn.Close();
-
-                // Обновляем содержимое 
-                loadData();
+                    // Обновляем содержимое 
+                    loadData();
+                }
             }
             catch
             {
