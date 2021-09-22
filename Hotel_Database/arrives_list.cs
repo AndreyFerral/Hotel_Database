@@ -11,7 +11,7 @@ namespace Hotel_Database
         int indexSelectRow;
         string idАrrival, nameStaff, idRoom, nameClient, idReservation, 
             pricePerStay, priceForAddServe, fine, scheduledDateLeave, 
-            dateArrival, dateLeave, peopleNum;
+            dateArrival, dateLeave, peopleNum, childrenNum;
 
         public arrives_list()
         {
@@ -67,6 +67,7 @@ namespace Hotel_Database
                 dateArrival = dataGridView1[9, indexSelectRow].Value.ToString();
                 dateLeave = dataGridView1[10, indexSelectRow].Value.ToString();
                 peopleNum = dataGridView1[11, indexSelectRow].Value.ToString();
+                childrenNum = dataGridView1[12, indexSelectRow].Value.ToString();
             }
         }
         private void add_ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,6 +88,7 @@ namespace Hotel_Database
                 dateArrival = dataGridView1[9, indexSelectRow].Value.ToString();
                 dateLeave = dataGridView1[10, indexSelectRow].Value.ToString();
                 peopleNum = dataGridView1[11, indexSelectRow].Value.ToString();
+                childrenNum = dataGridView1[12, indexSelectRow].Value.ToString();
 
                 myConn.Open();
 
@@ -102,7 +104,8 @@ namespace Hotel_Database
                 procedure = procedure + "@dateArrival = @p8, ";
                 if (scheduledDateLeave != "") procedure = procedure + "@scheduledDateLeave = @p9, ";
                 if (dateLeave != "") procedure = procedure + "@dateLeave = @p10, ";
-                procedure = procedure + "@peopleNum = @p11";
+                procedure = procedure + "@peopleNum = @p11, ";
+                procedure = procedure + "@childrenNum = @p12";
                 // Создать команду для добавления
                 SqlCommand myComm = new SqlCommand(procedure, myConn);
 
@@ -164,6 +167,16 @@ namespace Hotel_Database
                 else {
                     myComm.Parameters.Add("@p11", SqlDbType.NVarChar, 100);
                     myComm.Parameters["@p11"].Value = peopleNum;
+                }
+                if (childrenNum != "")
+                {
+                    myComm.Parameters.Add("@p12", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p12"].Value = childrenNum;
+                }
+                else
+                {
+                    myComm.Parameters.Add("@p12", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p12"].Value = childrenNum;
                 }
                 // Выполнить запрос на изменение без возвращения результата
                 myComm.ExecuteNonQuery();
@@ -229,6 +242,7 @@ namespace Hotel_Database
                 dateArrival = dataGridView1[9, indexSelectRow].Value.ToString();
                 dateLeave = dataGridView1[10, indexSelectRow].Value.ToString();
                 peopleNum = dataGridView1[11, indexSelectRow].Value.ToString();
+                childrenNum = dataGridView1[12, indexSelectRow].Value.ToString();
 
                 myConn.Open();
                 // Остальные поля могут быть нулевыми
@@ -243,7 +257,7 @@ namespace Hotel_Database
                 if (fine != "") procedure = procedure + "@fine = @p7, ";
                 procedure = procedure + "@dateArrival = @p8, @scheduledDateLeave = @p9, ";
                 if (dateLeave != "") procedure = procedure + "@dateLeave = @p10, ";
-                procedure = procedure + "@peopleNum = @p11, @idArrival = @p12";
+                procedure = procedure + "@peopleNum = @p11, @childrenNum = @p12, @idArrival = @p13";
 
                 // Создать команду для добавления
                 SqlCommand myComm = new SqlCommand(procedure, myConn);
@@ -295,7 +309,12 @@ namespace Hotel_Database
                 myComm.Parameters["@p11"].Value = peopleNum;
 
                 myComm.Parameters.Add("@p12", SqlDbType.NVarChar, 100);
-                myComm.Parameters["@p12"].Value = idАrrival;
+                myComm.Parameters["@p12"].Value = childrenNum;
+
+                myComm.Parameters.Add("@p13", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p13"].Value = idАrrival;
+
+
 
                 // Выполнить запрос на изменение без возвращения результата
                 myComm.ExecuteNonQuery();
@@ -320,7 +339,7 @@ namespace Hotel_Database
 
                 arrive_information form12 = new arrive_information(idАrrival, nameStaff, idRoom, nameClient, idReservation,
                     pricePerStay, priceForAddServe, fine, scheduledDateLeave,
-                    dateArrival, dateLeave, peopleNum);
+                    dateArrival, dateLeave, peopleNum, childrenNum);
 
                 form12.ShowDialog();
             }
@@ -419,6 +438,7 @@ namespace Hotel_Database
             dtbl.Columns[9].AllowDBNull = true;
             dtbl.Columns[10].AllowDBNull = true;
             dtbl.Columns[11].AllowDBNull = true;
+            dtbl.Columns[12].AllowDBNull = true;
 
             // Устанавливаем значения по умолчанию переменным (первая строка)
             indexSelectRow = 0;
@@ -438,6 +458,7 @@ namespace Hotel_Database
                 dateArrival = dataGridView1[9, indexSelectRow].Value.ToString();
                 dateLeave = dataGridView1[10, indexSelectRow].Value.ToString();
                 peopleNum = dataGridView1[11, indexSelectRow].Value.ToString();
+                childrenNum = dataGridView1[12, indexSelectRow].Value.ToString();
             }
         }
     }

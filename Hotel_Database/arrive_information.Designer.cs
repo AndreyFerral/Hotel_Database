@@ -90,6 +90,8 @@ namespace Hotel_Database
             this.label10 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -108,10 +110,10 @@ namespace Hotel_Database
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl1.Location = new System.Drawing.Point(0, 186);
+            this.tabControl1.Location = new System.Drawing.Point(0, 206);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(934, 130);
+            this.tabControl1.Size = new System.Drawing.Size(966, 130);
             this.tabControl1.TabIndex = 91;
             // 
             // tabPage1
@@ -121,7 +123,7 @@ namespace Hotel_Database
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(926, 101);
+            this.tabPage1.Size = new System.Drawing.Size(958, 101);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Сотрудник";
             // 
@@ -143,7 +145,7 @@ namespace Hotel_Database
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(920, 95);
+            this.dataGridView2.Size = new System.Drawing.Size(952, 95);
             this.dataGridView2.TabIndex = 31;
             // 
             // dataGridViewTextBoxColumn1
@@ -617,7 +619,6 @@ namespace Hotel_Database
             this.label7.Size = new System.Drawing.Size(108, 17);
             this.label7.TabIndex = 93;
             this.label7.Text = "Цена за услуги";
-
             // 
             // label6
             // 
@@ -629,7 +630,6 @@ namespace Hotel_Database
             this.label6.Size = new System.Drawing.Size(146, 17);
             this.label6.TabIndex = 92;
             this.label6.Text = "Цена за проживание";
-
             // 
             // label11
             // 
@@ -660,7 +660,7 @@ namespace Hotel_Database
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(642, 128);
+            this.textBox11.Location = new System.Drawing.Point(642, 125);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(250, 23);
@@ -670,12 +670,13 @@ namespace Hotel_Database
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label12.Location = new System.Drawing.Point(482, 160);
+            this.label12.Location = new System.Drawing.Point(482, 163);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(144, 17);
             this.label12.TabIndex = 104;
             this.label12.Text = "Количество человек";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label10
             // 
@@ -687,11 +688,10 @@ namespace Hotel_Database
             this.label10.Size = new System.Drawing.Size(92, 17);
             this.label10.TabIndex = 103;
             this.label10.Text = "Дата заезда";
-
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(642, 157);
+            this.textBox12.Location = new System.Drawing.Point(642, 160);
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
             this.textBox12.Size = new System.Drawing.Size(250, 23);
@@ -707,13 +707,35 @@ namespace Hotel_Database
             this.label9.Size = new System.Drawing.Size(157, 17);
             this.label9.TabIndex = 101;
             this.label9.Text = "Дата выезда по плану";
-
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label13.Location = new System.Drawing.Point(482, 190);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(129, 17);
+            this.label13.TabIndex = 110;
+            this.label13.Text = "Количество детей";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(642, 187);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.ReadOnly = true;
+            this.textBox13.Size = new System.Drawing.Size(250, 23);
+            this.textBox13.TabIndex = 111;
+            this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
             // arrive_information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 316);
+            this.ClientSize = new System.Drawing.Size(966, 336);
+            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox10);
@@ -822,5 +844,7 @@ namespace Hotel_Database
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn count_children;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox13;
     }
 }

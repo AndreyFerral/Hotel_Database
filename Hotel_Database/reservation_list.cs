@@ -11,7 +11,7 @@ namespace Hotel_Database
         int indexSelectRow;
         string idReservation, roomNumber, workerName, clientName,
             dateReservation, scheduledDateArrival, scheduledDateLeave, 
-            peopleNum, reservationType, reservaionPrice;
+            peopleNum, childrenNum, reservationType, reservaionPrice;
 
         public reservation_list()
         {
@@ -50,8 +50,9 @@ namespace Hotel_Database
                 scheduledDateArrival = dataGridView1[5, indexSelectRow].Value.ToString();
                 scheduledDateLeave = dataGridView1[6, indexSelectRow].Value.ToString();
                 peopleNum = dataGridView1[7, indexSelectRow].Value.ToString();
-                reservationType = dataGridView1[8, indexSelectRow].Value.ToString();
-                reservaionPrice = dataGridView1[9, indexSelectRow].Value.ToString();
+                childrenNum = dataGridView1[8, indexSelectRow].Value.ToString();
+                reservationType = dataGridView1[9, indexSelectRow].Value.ToString();
+                reservaionPrice = dataGridView1[10, indexSelectRow].Value.ToString();
             }
         }
 
@@ -70,14 +71,14 @@ namespace Hotel_Database
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != dataGridView1.Rows.Count - 1 && e.RowIndex != -1)
-                if (e.ColumnIndex == 9 || e.ColumnIndex == 8)
+                if (e.ColumnIndex == 10 || e.ColumnIndex == 9)
                 {
-                    if (dataGridView1[8, e.RowIndex].Value.ToString() == "с предоплатой")
-                        dataGridView1[9, e.RowIndex].ReadOnly = false;
-                    if (dataGridView1[8, e.RowIndex].Value.ToString() == "без предоплаты")
+                    if (dataGridView1[9, e.RowIndex].Value.ToString() == "с предоплатой")
+                        dataGridView1[10, e.RowIndex].ReadOnly = false;
+                    if (dataGridView1[9, e.RowIndex].Value.ToString() == "без предоплаты")
                     {
-                        dataGridView1[9, e.RowIndex].ReadOnly = true;
-                        dataGridView1[9, e.RowIndex].Value = "0,0000";       
+                        dataGridView1[10, e.RowIndex].ReadOnly = true;
+                        dataGridView1[10, e.RowIndex].Value = "0,0000";       
                     }
                 }
         }
@@ -96,8 +97,9 @@ namespace Hotel_Database
                 scheduledDateArrival = dataGridView1[5, indexSelectRow].Value.ToString();
                 scheduledDateLeave = dataGridView1[6, indexSelectRow].Value.ToString();
                 peopleNum = dataGridView1[7, indexSelectRow].Value.ToString();
-                reservationType = dataGridView1[8, indexSelectRow].Value.ToString();
-                reservaionPrice = dataGridView1[9, indexSelectRow].Value.ToString();
+                childrenNum =  dataGridView1[8, indexSelectRow].Value.ToString();
+                reservationType = dataGridView1[9, indexSelectRow].Value.ToString();
+                reservaionPrice = dataGridView1[10, indexSelectRow].Value.ToString();
 
                 // надо фиксить - если запятой не будет, то исключение
                 // удаляем лишние знаки
@@ -115,8 +117,9 @@ namespace Hotel_Database
                 string procedure = "execute add_reservation @workerName = @p1, @clientName = @p2, @room = @p3, " +
                     "@dateReservation = @p4, @scheduledDateArrival = @p5, @scheduledDateLeave = @p6";
                 if (peopleNum != "") procedure = procedure + ", @peopleNum = @p7";
-                if (reservationType != "") procedure = procedure + ", @reservationType = @p8";
-                if (reservaionPrice != "") procedure = procedure + ", @reservaionPrice = @p9";
+                if (childrenNum != "") procedure = procedure + ", @childrenNum = @p8";
+                if (reservationType != "") procedure = procedure + ", @reservationType = @p9";
+                if (reservaionPrice != "") procedure = procedure + ", @reservaionPrice = @p10";
 
                 // Создать команду для добавления
                 SqlCommand myComm = new SqlCommand(procedure, myConn);
@@ -145,14 +148,20 @@ namespace Hotel_Database
                     myComm.Parameters["@p7"].Value = peopleNum;
                 }
 
-                if (reservationType != "") {
+                if (childrenNum != "")
+                {
                     myComm.Parameters.Add("@p8", SqlDbType.NVarChar, 100);
-                    myComm.Parameters["@p8"].Value = reservationType;
+                    myComm.Parameters["@p8"].Value = childrenNum;
+                }
+
+                if (reservationType != "") {
+                    myComm.Parameters.Add("@p9", SqlDbType.NVarChar, 100);
+                    myComm.Parameters["@p9"].Value = reservationType;
                 }
 
                 if (reservaionPrice != "") {
-                    myComm.Parameters.Add("@p9", SqlDbType.Money, 100);
-                    myComm.Parameters["@p9"].Value = reservaionPrice;
+                    myComm.Parameters.Add("@p10", SqlDbType.Money, 100);
+                    myComm.Parameters["@p10"].Value = reservaionPrice;
                 }
 
                 // Выполнить запрос на изменение без возвращения результата
@@ -216,8 +225,10 @@ namespace Hotel_Database
                 scheduledDateArrival = dataGridView1[5, indexSelectRow].Value.ToString();
                 scheduledDateLeave = dataGridView1[6, indexSelectRow].Value.ToString();
                 peopleNum = dataGridView1[7, indexSelectRow].Value.ToString();
-                reservationType = dataGridView1[8, indexSelectRow].Value.ToString();
-                reservaionPrice = dataGridView1[9, indexSelectRow].Value.ToString();
+
+                childrenNum = dataGridView1[8, indexSelectRow].Value.ToString();
+                reservationType = dataGridView1[9, indexSelectRow].Value.ToString();
+                reservaionPrice = dataGridView1[10, indexSelectRow].Value.ToString();
 
                 // надо фиксить - если запятой не будет, то исключение
                 // удаляем лишние знаки
@@ -232,11 +243,12 @@ namespace Hotel_Database
                     scheduledDateArrival.Trim() == "" || scheduledDateLeave.Trim() == "") throw new Exception();
 
                 // Если три последних поля оставить пустыми, то они установятся по умолчанию
-                string procedure = "execute update_reservation @idReservation = @p10, @workerName = @p1, @clientName = @p2, @room = @p3, " +
+                string procedure = "execute update_reservation @idReservation = @p11, @workerName = @p1, @clientName = @p2, @room = @p3, " +
                     "@dateReservation = @p4, @scheduledDateArrival = @p5, @scheduledDateLeave = @p6";
                 if (peopleNum != "") procedure = procedure + ", @peopleNum = @p7";
-                if (reservationType != "") procedure = procedure + ", @reservationType = @p8";
-                if (reservaionPrice != "") procedure = procedure + ", @reservaionPrice = @p9";
+                if (childrenNum != "") procedure = procedure + ", @childrenNum = @p8";
+                if (reservationType != "") procedure = procedure + ", @reservationType = @p9";
+                if (reservaionPrice != "") procedure = procedure + ", @reservaionPrice = @p10";
 
                 // Создать команду для добавления
                 SqlCommand myComm = new SqlCommand(procedure, myConn);
@@ -265,18 +277,28 @@ namespace Hotel_Database
                     myComm.Parameters["@p7"].Value = peopleNum;
                 }
 
-                if (reservationType != "") {
+
+
+                if (childrenNum != "")
+                {
                     myComm.Parameters.Add("@p8", SqlDbType.NVarChar, 100);
-                    myComm.Parameters["@p8"].Value = reservationType;
+                    myComm.Parameters["@p8"].Value = childrenNum;
                 }
 
-                if (reservaionPrice != "") {
+                if (reservationType != "")
+                {
                     myComm.Parameters.Add("@p9", SqlDbType.NVarChar, 100);
-                    myComm.Parameters["@p9"].Value = reservaionPrice;
+                    myComm.Parameters["@p9"].Value = reservationType;
                 }
 
-                myComm.Parameters.Add("@p10", SqlDbType.NVarChar, 100);
-                myComm.Parameters["@p10"].Value = idReservation;
+                if (reservaionPrice != "")
+                {
+                    myComm.Parameters.Add("@p10", SqlDbType.Money, 100);
+                    myComm.Parameters["@p10"].Value = reservaionPrice;
+                }
+
+                myComm.Parameters.Add("@p11", SqlDbType.NVarChar, 100);
+                myComm.Parameters["@p11"].Value = idReservation;
 
                 // Выполнить запрос на изменение без возвращения результата
                 myComm.ExecuteNonQuery();
@@ -301,7 +323,7 @@ namespace Hotel_Database
 
                 reservation_information form15 = new reservation_information(idReservation, roomNumber, workerName, clientName,
                                             dateReservation, scheduledDateArrival, scheduledDateLeave,
-                                            peopleNum, reservationType, reservaionPrice);
+                                            peopleNum, childrenNum, reservationType, reservaionPrice);
 
                 form15.ShowDialog();
             }
@@ -382,6 +404,7 @@ namespace Hotel_Database
             dtbl.Columns[7].AllowDBNull = true;
             dtbl.Columns[8].AllowDBNull = true;
             dtbl.Columns[9].AllowDBNull = true;
+            dtbl.Columns[10].AllowDBNull = true;
 
             // Устанавливаем значения по умолчанию переменным (первая строка)
             indexSelectRow = 0;
@@ -397,8 +420,10 @@ namespace Hotel_Database
                 scheduledDateArrival = dataGridView1[5, indexSelectRow].Value.ToString();
                 scheduledDateLeave = dataGridView1[6, indexSelectRow].Value.ToString();
                 peopleNum = dataGridView1[7, indexSelectRow].Value.ToString();
-                reservationType = dataGridView1[8, indexSelectRow].Value.ToString();
-                reservaionPrice = dataGridView1[9, indexSelectRow].Value.ToString();
+
+                childrenNum = dataGridView1[8, indexSelectRow].Value.ToString();
+                reservationType = dataGridView1[9, indexSelectRow].Value.ToString();
+                reservaionPrice = dataGridView1[10, indexSelectRow].Value.ToString();
             }
         }
     }

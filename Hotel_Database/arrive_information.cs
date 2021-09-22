@@ -10,12 +10,26 @@ namespace Hotel_Database
         SqlConnection myConn = new SqlConnection();
         string idАrrival, nameStaff, idRoom, nameClient, idReservation,
              pricePerStay, priceForAddServe, fine, scheduledDateLeave,
-             dateArrival, dateLeave, peopleNum;
+             dateArrival, dateLeave, peopleNum, childrenNum;
 
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
 
         public arrive_information(string idАrrival, string nameStaff, string idRoom, string nameClient, string idReservation,
              string pricePerStay, string priceForAddServe, string fine, string scheduledDateLeave,
-             string dateArrival, string dateLeave, string peopleNum)
+             string dateArrival, string dateLeave, string peopleNum, string childrenNum)
         {
             this.idАrrival = idАrrival;
             this.nameStaff = nameStaff;
@@ -29,6 +43,7 @@ namespace Hotel_Database
             this.dateArrival = dateArrival;
             this.dateLeave = dateLeave;
             this.peopleNum = peopleNum;
+            this.childrenNum = childrenNum;
 
             InitializeComponent();
         }
@@ -60,6 +75,7 @@ namespace Hotel_Database
             textBox10.Text = dateArrival;
             textBox11.Text = dateLeave;
             textBox12.Text = peopleNum;
+            textBox13.Text = childrenNum;
         }
 
         private void loadDataStaff()

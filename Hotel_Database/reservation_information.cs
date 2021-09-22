@@ -10,11 +10,11 @@ namespace Hotel_Database
         SqlConnection myConn = new SqlConnection();
         string idReservation, roomNumber, workerName, clientName,
             dateReservation, scheduledDateArrival, scheduledDateLeave,
-            peopleNum, reservationType, reservaionPrice;
+            peopleNum, childrenNum, reservationType, reservaionPrice;
 
         public reservation_information(string idReservation, string roomNumber, string workerName, string clientName,
             string dateReservation, string scheduledDateArrival, string scheduledDateLeave,
-            string peopleNum, string reservationType, string reservaionPrice)
+            string peopleNum, string childrenNum, string reservationType, string reservaionPrice)
         {
             this.idReservation = idReservation;
             this.roomNumber = roomNumber;
@@ -24,6 +24,8 @@ namespace Hotel_Database
             this.scheduledDateArrival = scheduledDateArrival;
             this.scheduledDateLeave = scheduledDateLeave;
             this.peopleNum = peopleNum;
+
+            this.childrenNum = childrenNum;
             this.reservationType = reservationType;
             this.reservaionPrice = reservaionPrice;
             InitializeComponent();
@@ -51,8 +53,9 @@ namespace Hotel_Database
             textBox6.Text = scheduledDateArrival;
             textBox7.Text = scheduledDateLeave;
             textBox8.Text = peopleNum;
-            textBox9.Text = reservationType;
-            textBox10.Text = reservaionPrice;
+            textBox9.Text = childrenNum;
+            textBox10.Text = reservationType;
+            textBox11.Text = reservaionPrice;
         }
         private void loadDataClient()
         {

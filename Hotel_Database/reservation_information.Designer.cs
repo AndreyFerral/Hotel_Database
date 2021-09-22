@@ -29,8 +29,8 @@ namespace Hotel_Database
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,6 +74,8 @@ namespace Hotel_Database
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,27 +85,27 @@ namespace Hotel_Database
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(641, 101);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(250, 23);
-            this.textBox9.TabIndex = 133;
-            // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(641, 130);
+            this.textBox10.Location = new System.Drawing.Point(641, 127);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(250, 23);
-            this.textBox10.TabIndex = 132;
+            this.textBox10.TabIndex = 133;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(641, 156);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
+            this.textBox11.Size = new System.Drawing.Size(250, 23);
+            this.textBox11.TabIndex = 132;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(481, 133);
+            this.label10.Location = new System.Drawing.Point(481, 159);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(135, 17);
@@ -114,7 +116,7 @@ namespace Hotel_Database
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(481, 104);
+            this.label9.Location = new System.Drawing.Point(481, 130);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 17);
@@ -535,13 +537,34 @@ namespace Hotel_Database
             this.label1.TabIndex = 110;
             this.label1.Text = "Номер брони";
             // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(641, 101);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(250, 23);
+            this.textBox9.TabIndex = 134;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.Location = new System.Drawing.Point(481, 104);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(129, 17);
+            this.label11.TabIndex = 135;
+            this.label11.Text = "Количество детей";
+            // 
             // reservation_information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 296);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.textBox11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
@@ -580,8 +603,8 @@ namespace Hotel_Database
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;
@@ -625,5 +648,7 @@ namespace Hotel_Database
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn count_children;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label11;
     }
 }
